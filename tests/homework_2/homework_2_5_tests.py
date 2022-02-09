@@ -2,14 +2,12 @@ import io
 import unittest
 from contextlib import redirect_stdout
 
-from tasks import homework_1
 
+class HomeworkTest(unittest.TestCase):
 
-class TestStringMethods(unittest.TestCase):
-
-    def test_upper(self):
+    def test_homework_2_5(self):
         with io.StringIO() as buf, redirect_stdout(buf):
-            homework_1.print_student_info(('Иван Питонов', 2001, [8, 7, 7, 9, 6], True))
+            import tasks.homework_2.homework_2_5
             output = buf.getvalue().split("\n")
             self.assertEqual("Студент: Питонов, Иван", output[0], "Неправильный вывод имени и фамилии")
             self.assertEqual("Возраст: 21", output[1], "Неправильный вывод возраста")
