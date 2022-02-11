@@ -1,4 +1,4 @@
-CURRENT_YEAR = 202
+CURRENT_YEAR = 2022
 
 student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
 
