@@ -8,3 +8,6 @@
 
 input1 = input()
 input2 = input()
+
+list1 = input1.split(input2)
+print(list1[1])

@@ -1,6 +1,6 @@
-CURRENT_YEAR = 2022
+#CURRENT_YEAR = 2022
 
-student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
+#student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
 
 """
 Формат данных - ('имя', год рождения, [оценки])
@@ -19,3 +19,17 @@ student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
 
 # Если средняя оценка Ивана больше или равна 8, то он получает повышенную стипендию.
 # Выведите "Повышенная стипендия: есть/нет" в зависимости от его оценок
+CURRENT_YEAR = 2022
+student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
+name = student[0].split()
+age = CURRENT_YEAR - student[1]
+student_bal = set(student[2])
+avg_student_bal = sum(student_bal) / len(student_bal)
+print('Студент:', name[1]+',', name[0])
+print('Возраст:', age)
+print('Оценки:', student_bal)
+print('Средний бал:', avg_student_bal)
+if avg_student_bal >= 8:
+    print('Есть')
+else:
+    print('Нет')

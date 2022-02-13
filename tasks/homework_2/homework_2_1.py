@@ -8,3 +8,12 @@
 # последний символ слова
 # слово без последних двух букв
 # слово в uppercase
+user_word = input()
+len_user_word = len(user_word) # длина слова
+word1 = user_word[1:] # слово без первой буквы
+word2 = user_word[-1] # последний символ слова
+word3 = user_word[:-2] # слово без последних двух букв
+word4 = user_word.upper() # слово в uppercase
+print('длина слова-'+str(len_user_word), 'слово без первой буквы-'+
+      str(word1) , 'последний символ слова-'+ str(word2), 'слово без последних двух букв-'+ str(word3),
+      'слово в uppercase-'+ str(word4), sep='\n')

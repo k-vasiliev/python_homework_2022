@@ -7,3 +7,11 @@
 dwarves = ["Балин", "Двалин", "Бифур", "Бофур",
          "Бомбур", "Оин", "Глоин", "Дори", "Нори",
          "Ори", "Фили", "Кили", "Торин"]
+list_dwarves1 = dwarves[1:4]
+list_dwarves2 = dwarves[0::2]
+list_dwarves3 = dwarves[5::2]
+list_dwarves4 = dwarves[12:5:-2]
+print(list_dwarves1)
+print(list_dwarves2)
+print(list_dwarves3)
+print(list_dwarves4)

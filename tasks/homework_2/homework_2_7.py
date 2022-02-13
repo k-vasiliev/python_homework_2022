@@ -11,3 +11,6 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
+developer = dict_of_lists['Список2'][0]['Windows'][1]
+get_developer = dict_of_lists.get('Список2')[1].get('IBM')[1]
+print(get_developer)
