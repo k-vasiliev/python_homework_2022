@@ -8,6 +8,3 @@
 
 input1 = input()
 input2 = input()
-
-i = input1.find(input2)
-print(input1[i+len(input2):])
