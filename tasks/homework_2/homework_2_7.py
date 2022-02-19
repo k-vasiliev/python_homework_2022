@@ -11,3 +11,7 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
+
+needed_developer = dict_of_lists.get('Список2')[0].get('Windows')[1]
+
+print(needed_developer)
