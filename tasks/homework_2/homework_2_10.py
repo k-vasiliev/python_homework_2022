@@ -39,9 +39,9 @@ for disc in all_choices:
 disc_count = []
 num_disc = 0
 for elem in unique_disc:
-    if
-    disc_count[num_disc] = all_choices.count(elem)
-    num_disc = num_disc + 1
+    for n in range(len(unique_disc)-1):
+        disc_count[n] = all_choices.count(elem)
+
 print(disc_count)
 """
 n1 = all_choices.count('английский')
