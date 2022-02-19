@@ -26,7 +26,23 @@ student_1_disciplines = input().split(' ')
 student_2_disciplines = input().split(' ')
 student_3_disciplines = input().split(' ')
 all_choices = student_1_disciplines + student_2_disciplines + student_3_disciplines
-print (all_choices)
+
+# составим список уникальных названий
+unique_disc = []
+for disc in all_choices:
+    if disc in unique_disc:
+        continue
+    else:
+        unique_disc.append(disc)
+
+# составим список количества выбора каждой дисциплины
+disc_count = []
+num_disc = 0
+for elem in unique_disc:
+    if
+    disc_count[num_disc] = all_choices.count(elem)
+    num_disc = num_disc + 1
+print(disc_count)
 """
 n1 = all_choices.count('английский')
 n2 = all_choices.count('немецкий')
