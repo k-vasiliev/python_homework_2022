@@ -11,3 +11,8 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
+
+dict2 = dict_of_lists['Список2']
+dict3 = dict2[0]
+dict4 = dict3['Windows']
+print(dict4[1])
