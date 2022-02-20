@@ -10,3 +10,9 @@
 """
 
 input_string = (input())
+# Разбиваем строку на слова
+words = input_string.split(' ')
+# Проходим по словам и добавляем первые буквы в результат
+result_string = ''.join([s[0] for s in words]).upper()
+
+print(result_string)

@@ -9,3 +9,14 @@
 """
 
 number = int(input())
+# На всё-таки лучше представить число как последовательность строчных символов
+s = str(number)
+
+# Проходим по цифрам числа и добавляем в список
+result_list = [int(ch) for ch in s]
+
+# перевод в множество уберет все повторы
+result_set = set(result_list)
+
+# результат
+print(f"{len(result_list)},{len(result_set)}")

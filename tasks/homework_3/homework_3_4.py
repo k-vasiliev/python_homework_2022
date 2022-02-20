@@ -23,3 +23,11 @@ shops = [
 ]
 
 # ваш код
+result_dict = dict()
+
+for row in shops:
+    if not row['товар'] in result_dict:
+        result_dict[row['товар']] = 0
+    result_dict[row['товар']] += row['количество']
+
+print(result_dict)
