@@ -23,6 +23,18 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+student_1_disciplines = 'математика немецкий право'
+student_1_disciplines_lst = set(student_1_disciplines.split())
+student_2_disciplines = 'математика немецкий'
+student_2_disciplines_lst = set(student_2_disciplines.split())
+student_3_disciplines = 'немецкий право математика'
+student_3_disciplines_lst = set(student_3_disciplines.split())
+list_of_subjects = ['английский', 'немецкий', 'право', 'математика', 'сольфеджио']
+dict_facultates = {x: 0 for x in list_of_subjects}
+
+result = student_1_disciplines_lst.intersection(student_2_disciplines_lst, student_3_disciplines_lst)
+
+if len(result) == 0:
+    print(0)
+elif 3 >= len(result) > 0:
+    print(len(result))

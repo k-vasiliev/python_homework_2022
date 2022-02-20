@@ -11,3 +11,14 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
+
+find_string = 'разработчик'
+find_dict = dict_of_lists['Список2']
+
+for i in find_dict:
+    if i.get('Windows'):
+        if find_string in i['Windows']:
+            print(find_string)
+
+
+

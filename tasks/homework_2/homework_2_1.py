@@ -8,3 +8,19 @@
 # последний символ слова
 # слово без последних двух букв
 # слово в uppercase
+
+# Решение
+
+n = input()
+
+case_1 = len(n)
+case_2 = n[1:]
+case_3 = n[-1]
+case_4 = n[:-2]
+case_5 = n.upper()
+
+print(case_1)
+print(case_2)
+print(case_3)
+print(case_4)
+print(case_5)
