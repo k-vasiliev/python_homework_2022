@@ -35,33 +35,18 @@ for disc in all_choices:
     else:
         unique_disc.append(disc)
 
-# составим список количества выбора каждой дисциплины
+# составим список: сколько раз сделан выбор каждой дисциплины
 disc_count = []
-num_disc = 0
-for elem in unique_disc:
-    for n in range(len(unique_disc)-1):
-        disc_count[n] = all_choices.count(elem)
+for n in range(len(unique_disc)):
+    disc_count.append(all_choices.count(unique_disc[n]))
 
-print(disc_count)
-"""
-n1 = all_choices.count('английский')
-n2 = all_choices.count('немецкий')
-n3 = all_choices.count('право')
-n4 = all_choices.count('математика')
-n5 = all_choices.count('сольфеджио')
+# для предметов, по которым число выборов равно 3, откроется факультатив
+num_facult = []
+for elem in disc_count:
+    if elem == 3:
+        num_facult.append(1)
+    else:
+        num_facult.append(0)
 
-num_facult = [0, 0, 0, 0, 0]
-for elem in num_facult:
-
-if n1 == 3:
-    num_facult[0] = 1
-if n2 == 3:
-    num_facult[1] = 1
-if n3 == 3:
-    num_facult[2] = 1
-if n4 == 3:
-    num_facult[3] = 1
-if n5 == 3:
-    num_facult[4] = 1
 print(sum(num_facult))
-"""
+
