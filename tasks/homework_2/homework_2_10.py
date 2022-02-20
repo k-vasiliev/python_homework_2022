@@ -23,6 +23,28 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+#Нет пересечений
+Vasya = {'английский', 'сольфеджио', 'право'}
+Petya = {'математика', 'сольфеджио'}
+Misha = {'немецкий', 'право'}
+print('Факультативы Васи: ', Vasya)
+print('Факультативы Пети: ', Petya)
+print('Факультативы Миши: ', Misha)
+print('Какие факультеты пересекаются?', Vasya.intersection(Petya, Misha))
+if Vasya.intersection(Petya, Misha):
+    print('2')
+else:
+    print('0')
+
+#Есть пересечения
+Vasya = {'математика', 'немецкий', 'право'}
+Petya = {'математика', 'немецкий'}
+Misha = {'немецкий', 'право', 'математика'}
+print('Факультативы Васи: ', Vasya)
+print('Факультативы Пети: ', Petya)
+print('Факультативы Миши: ', Misha)
+print('Какие факультеты пересекаются?', Vasya.intersection(Petya, Misha))
+if Vasya.intersection(Petya, Misha):
+    print('2')
+else:
+    print('0')

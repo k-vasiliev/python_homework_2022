@@ -6,5 +6,10 @@
 # пользователь ввел "Hello"
 # вывод ", welcome"
 
+
 input1 = input()
+first_string ='Hello, welcome'
 input2 = input()
+second_string = 'Hello'
+new_string = 'Hello, welcome'.replace('Hello', ' ')
+print(new_string)
