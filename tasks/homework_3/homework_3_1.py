@@ -15,3 +15,24 @@
 """
 
 user_input = input()
+word_list = user_input.split(' ')
+
+# список уникальных слов
+unique_word = []
+for w in word_list:
+    if w in unique_word:
+        continue
+    else:
+        unique_word.append(w)
+
+# составим список списков "слово, количество"
+count_word = []
+n = 0
+for word in unique_word:
+    count_word.append([word, word_list.count(word)])
+    n += 1
+
+for i, j in count_word:
+    print( f'{i}: {j}')
+
+
