@@ -25,6 +25,8 @@
 student_1_disciplines = input().split(' ')
 student_2_disciplines = input().split(' ')
 student_3_disciplines = input().split(' ')
+
+# составим список из всех выбранных дисциплин
 all_choices = student_1_disciplines + student_2_disciplines + student_3_disciplines
 
 # составим список уникальных названий
