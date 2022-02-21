@@ -23,6 +23,64 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+#Студент 1 вводит данные, проверяем данные на корректность
+s1 = input().split(' ')
+len_s1 = len(s1)
+
+if (len_s1 == 1) or (len_s1 == 2 and s1[0] != s1[1]) or (len_s1 == 3 and (s1[0] != s1[1] and s1[1] != s1[2] and s1[0] != s1[2])):
+    x1 = 'Заявка принята'
+    print(x1)
+elif len_s1 > 3:
+    print('Ошибка: максимальное число факультативов - 3')
+else:
+    print('Ошибка: факультатив может быть указан только 1 раз')
+
+#Студент 2 вводит данные, проверяем данные на корректность
+s2 = input().split(' ')
+len_s2 = len(s2)
+
+if (len_s2 == 1) or (len_s2 == 2 and s2[0] != s2[1]) or (len_s2 == 3 and (s2[0] != s2[1] and s2[1] != s2[2] and s2[0] != s2[2])):
+    x2 = 'Заявка принята'
+    print(x2)
+elif len_s2 > 3:
+    print('Ошибка: максимальное число факультативов - 3')
+else:
+    print('Ошибка: факультатив может быть указан только 1 раз')
+
+#Студент 3 вводит данные, проверяем данные на корректность
+s3 = input().split(' ')
+len_s3 = len(s3)
+
+if len_s3 == 1 or (len_s3 == 2 and s3[0] != s3[1]) or (len_s3 == 3 and (s3[0] != s3[1] and s3[1] != s3[2] and s3[0] != s3[2])):
+    x3 = 'Заявка принята'
+    print(x3)
+elif len_s3 > 3:
+    print('Ошибка: максимальное число факультативов - 3')
+else:
+    print('Ошибка: факультатив может быть указан только 1 раз')
+
+#Если все заявки корректны - считаем
+if x1 == x2 == x3 == 'Заявка принята':
+    all = (' '.join(s1) + ' ' + ' '.join(s2) + ' ' + ' '.join(s3))
+    f1 = all.count('английский')
+    f2 = all.count('немецкий')
+    f3 = all.count('право')
+    f4 = all.count('математика')
+    f5 = all.count('сольфеджио')
+
+course = list()
+if f1 == 3:
+    course.append('английский')
+if f2 == 3:
+    course.append('немецкий')
+if f3 == 3:
+    course.append('право')
+if f4 == 3:
+    course.append('математика')
+if f5 == 3:
+    course.append('сольфеджио')
+
+cnt_course = len(course)
+name_course = ', '.join(course)
+
+print(f'Количество открытых курсов: {cnt_course} ({name_course})')

@@ -8,3 +8,12 @@
 # последний символ слова
 # слово без последних двух букв
 # слово в uppercase
+
+country = input('В какой стране ты живешь?')
+
+print("Слово:", country)
+print("Длина слова:", len(country))
+print("Слово без первой буквы:", country[1:])
+print("Последний символ слова:", country[-1])
+print("Слово без последних двух букв:", country[:-2])
+print("Слово в uppercase:", country.upper())

@@ -8,3 +8,7 @@
 
 input1 = input()
 input2 = input()
+
+print("Первый ввод:", input1)
+print("Второй ввод:", input2)
+print("Итог:", input1[len(input2):])
