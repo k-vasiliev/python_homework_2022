@@ -2,4 +2,12 @@
 # Пользователь вводит целое число, не меньшее 2
 # Выведите его наименьший натуральный делитель, отличный от 1
 
-user_input = input()
+user_input = int(input('Введите любое целое число, большее или равное 2: ')) #приведем к числу
+
+if user_input < 2:
+    print('Ваше число меньше 2')
+else:
+    divider = 2
+    while user_input % divider != 0:
+        divider += 1
+    print(divider)

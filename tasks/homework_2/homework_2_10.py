@@ -23,6 +23,29 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+#игнорируем регистр на случай если в заявках он будет разный
+student_1_disciplines = input('Первый студент: ').lower()
+student_2_disciplines = input('Второй студент: ').lower()
+student_3_disciplines = input('Третий студент: ').lower()
+
+#примем за константу кол-во студентов
+number_of_students = 3
+
+#соединим заявки воедино, убрав возможные дубли в списке заявок каждого студента, дополнительно создадим набор уникальных факультативов в заявке
+total_list = list(set(student_1_disciplines.split(' '))) + list(set(student_2_disciplines.split(' '))) + list(set(student_3_disciplines.split(' ')))
+total_set = set(total_list)
+
+#создаем пустой список
+check_list = list()
+
+#начинаем цикл до опустошения множества
+while len(total_set) != 0:
+    #вытаскиваем элемент из множества
+    temp_value = total_set.pop()
+    #считаем кол-во его вхождений в список заявок
+    counter = total_list.count(temp_value)
+    #если кол-во заявок равно кол-ву студентов, то вставляем название предмета в список для проверки
+    if counter == number_of_students:
+        check_list.append(temp_value)
+
+print(len(check_list))

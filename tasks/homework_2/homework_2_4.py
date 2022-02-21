@@ -3,4 +3,11 @@
 # Выведите сумму этих чисел. Однако, если хотя бы два из этих чисел равны,
 # то сумма будет считаться нулевой
 
-user_input = input()
+user_input = input('Введите три целых числа через пробел: ')
+
+list1 = list(map(int, user_input.split(' ')))
+
+if list1[0] == list1[1] or list1[0] == list1[2] or list1[1] == list1[2]:
+    print(0)
+else:
+    print(sum(list1))
