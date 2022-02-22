@@ -14,7 +14,7 @@
 
 """
 
-user_input = input()
+user_input = input().lower()
 word_list = user_input.split(' ')
 
 # список уникальных слов
