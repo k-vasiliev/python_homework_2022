@@ -7,9 +7,9 @@
 # вывод ", welcome"
 
 
-input1 = input()
-first_string ='Hello, welcome'
-input2 = input()
-second_string = 'Hello'
-new_string = 'Hello, welcome'.replace('Hello', ' ')
+input1 = input('Введите фразу 1: ')
+first_string = input1
+input2 = input('Введите фразу 2: ')
+second_string = input2
+new_string = input1.replace(input2, ' ')
 print(new_string)

@@ -22,6 +22,7 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
-dict_of_lists = dict(Windows='разработчик')
-developer_name = dict_of_lists['Windows']
-print(developer_name)
+#dict_of_lists = dict(Windows='разработчик')
+#developer_name = dict_of_lists['Windows']
+#print(developer_name)
+print(dict_of_lists.get('Список2')[0].get('Windows')[1])
