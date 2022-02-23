@@ -14,15 +14,3 @@ for n in range(1000, 3001):
         all_even.append(n)
 
 print(*all_even, sep = ", ")
-
-
-
-
-
-
-
-
-
-
-
-
