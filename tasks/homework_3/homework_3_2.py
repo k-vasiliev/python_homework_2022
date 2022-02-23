@@ -23,5 +23,5 @@ print('Цифры:', len(numbers))
 print('Буквы:', len(words))
 
 #2 вариант
-print('Цифры:',len([i for i in user_input if i.isdigit()]))
-print('Буквы:',len([i for i in user_input if i.isalpha()]))
+print('Цифры:', len([i for i in user_input if i.isdigit()]))
+print('Буквы:', len([i for i in user_input if i.isalpha()]))
