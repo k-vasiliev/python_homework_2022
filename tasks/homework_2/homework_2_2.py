@@ -8,3 +8,6 @@
 
 input1 = input()
 input2 = input()
+
+print(input1[len(input2):]) # удалить если в начале строки
+print(input1.replace(input2, "")) # удалить из строки вообще
