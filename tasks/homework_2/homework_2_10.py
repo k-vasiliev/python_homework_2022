@@ -19,14 +19,19 @@
 #{'математика', 'сольфеджио'}
 #{'немецкий', 'право'}
 
-Vasya = input('Вася: ')
-Petya = input('Петя: ')
-Misha = input('Миша: ')
+Vasya = input('Факультативы Васи: ')
+Petya = input('Факультативы Пети: ')
+Misha = input('Факультативы Миши: ')
 
-result = Vasya.intersection(Petya, Misha)
+Vasya = set(Vasya.split(' '))
+Petya = set(Petya.split(' '))
+Misha = set(Misha.split(' '))
 
-if len(result) == 0:
-    print(0)
+if Vasya.intersection(Petya, Misha):
+    print('2')
 else:
-    if 3 >= len(result) > 0:
-        print(2)
+    print('0')
+
+
+
+
