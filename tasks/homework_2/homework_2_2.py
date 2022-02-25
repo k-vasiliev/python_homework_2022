@@ -8,3 +8,5 @@
 
 input1 = input()
 input2 = input()
+input_replace = "Hello".replace("Hello","welcome")
+print(input_replace)

@@ -10,3 +10,6 @@
 # последний символ слова
 # слово без последних двух букв
 # слово в uppercase
+string = input("Введите любой текст ")
+long_string = len(string)
+print(long_string, string[1:], string[-1], string[:-2], string.upper())
