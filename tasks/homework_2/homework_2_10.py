@@ -22,7 +22,7 @@
 Вывод:
 2
 """
-
+"""
 #игнорируем регистр на случай если в заявках он будет разный
 student_1_disciplines = input('Первый студент: ').lower()
 student_2_disciplines = input('Второй студент: ').lower()
@@ -49,3 +49,21 @@ while len(total_set) != 0:
         check_list.append(temp_value)
 
 print(len(check_list))
+"""
+
+#студенты вводят заявки через пробел, превращаем их заявки в множества, предварительно вырованяв регистр
+#разделим строки с помощью разделителя пробелом
+student_1_disciplines = set(input('Первый студент: ').lower().split(' '))
+student_2_disciplines = set(input('Второй студент: ').lower().split(' '))
+student_3_disciplines = set(input('Третий студент: ').lower().split(' '))
+
+#удалим пустоты на случай, если студент поставил пробел более одного раза
+student_1_disciplines.discard('')
+student_2_disciplines.discard('')
+student_3_disciplines.discard('')
+
+#обрабатываем пересечения
+intersection = student_1_disciplines & student_2_disciplines & student_3_disciplines
+
+#выводим результат
+print(len(intersection))
