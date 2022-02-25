@@ -23,6 +23,15 @@
 2
 """
 
+#Решение через пересечения
+student1_input = set(input().split())
+student2_input = set(input().split())
+student3_input = set(input().split())
+
+print(len(student1_input & student2_input & student3_input))
+
+"""
+#Решение через ветвление
 #Студент 1 вводит данные, проверяем данные на корректность
 s1 = input().split(' ')
 len_s1 = len(s1)
@@ -84,3 +93,4 @@ cnt_course = len(course)
 name_course = ', '.join(course)
 
 print(f'Количество открытых курсов: {cnt_course} ({name_course})')
+"""
