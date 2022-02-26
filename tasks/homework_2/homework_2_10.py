@@ -24,9 +24,9 @@
 2
 """
 
-student_1_disciplines = 'английский сольфеджио право'
-student_2_disciplines = 'математика сольфеджио'
-student_3_disciplines = 'немецкий право'
+student_1_disciplines = input()
+student_2_disciplines = input()
+student_3_disciplines = input()
 set_student_1_disciplines = set(student_1_disciplines.split())
 set_student_2_disciplines = set(student_2_disciplines.split())
 set_student_3_disciplines = set(student_3_disciplines.split())
