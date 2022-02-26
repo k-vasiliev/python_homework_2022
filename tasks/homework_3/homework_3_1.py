@@ -14,4 +14,6 @@
 
 """
 
-user_input = input()
+user_input = input().split()
+for i in range(len(user_input)):
+    print(f'{user_input[i]}:{user_input.count(user_input[i])}')

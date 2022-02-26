@@ -4,7 +4,7 @@
 # то сумма будет считаться нулевой
 
 user_input = input()
-without_space = user_input.replace(' ', '')
+without_space = user_input.split()
 num1, num2, num3 = without_space[0], without_space[1], without_space[2]
 num1 = int(num1)
 num2 = int(num2)

@@ -1,10 +1,10 @@
 # Пользователь вводит слово
 # Распечатайте является ли введенное слово палиндромом (True/False)
 
-n = input()
+word = input()
 
 
-if n == n[:: -1]:
+if word.lower() == word[:: -1].lower():
     print(True)
 else:
     print(False)

@@ -9,3 +9,8 @@
 """
 
 number = int(input())
+num_digits = len(str(number))
+x = [x for x in str(number)]
+to_int = list(map(int, x))
+unique = len(set(to_int))
+print(num_digits, unique, sep=',')

@@ -7,7 +7,6 @@ my_list = []
 
 for i in range(1, user_input + 1):
     if i != 1 and user_input % i == 0:
-        my_list.append(i)
+        print(i)
+        break
 
-result = min(my_list)
-print(result)

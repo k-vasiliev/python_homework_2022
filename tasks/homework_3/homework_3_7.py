@@ -10,3 +10,6 @@
 """
 
 input_string = (input())
+
+x = ''.join([i for i in input_string if i.isupper()])
+print(x)

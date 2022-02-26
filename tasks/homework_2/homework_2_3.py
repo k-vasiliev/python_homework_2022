@@ -5,9 +5,9 @@
 
 # Решение
 
-n = input()
+stroka = input()
 
-if n.isnumeric():
+if stroka.isnumeric():
     print('Это число!')
 else:
     print('Это не число!')
