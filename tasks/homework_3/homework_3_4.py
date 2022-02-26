@@ -22,4 +22,7 @@ shops = [
     {'товар': 'яблоки', 'количество': 750}
 ]
 
-# ваш код
+for d in shops:
+    for key, value in d:
+        if value
+
