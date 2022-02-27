@@ -22,7 +22,13 @@
 Вывод:
 2
 """
-
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+student1 = input()
+student2 = input()
+student3 = input()
+if (len(student1) > 0) and (len(student1) <= 3) and \
+    (len(student2) > 0) and (len(student2) <= 3) and \
+    (len(student3) > 0) and (len(student3) <= 3):
+    student1_set = set(student1)
+    student2_set = set(student2)
+    student3_set = set(student3)
+print(len(student1_set + student2_set + student3_set))
