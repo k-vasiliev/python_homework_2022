@@ -12,4 +12,4 @@ dict_of_lists = {
     ]
 }
 
-print(dict_of_lists['Список2'])
+print(dict_of_lists['Список2'][0]['Windows'][1])
