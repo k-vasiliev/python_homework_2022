@@ -15,24 +15,24 @@
 
 N = int(input())
 i = 0
-a = 1
-b = 1
+fib_element1 = 1
+fib_element2 = 1
 result_list = list()
-result_list.append(a)       # минимум один элемент
+result_list.append(fib_element1)       # минимум один элемент
 
 # Если больше одного элемента, то запускаем процесс поиска
 if N > 1:
-    result_list.append(b)
+    result_list.append(fib_element2)
 
     # последующие элементы ищем итерационно
     for i in range(2, N):
         # считаем следующий элемент по определению ряда
-        fib_next = a + b
+        fib_next = fib_element1 + fib_element2
         # добавляем элемент в список
         result_list.append(fib_next)
         # продвигаем элементы
-        a = b
-        b = fib_next
+        fib_element1 = fib_element2
+        fib_element2 = fib_next
 
 # выдаем результат в запрошенном формате
 print(str(result_list)[1:-1])

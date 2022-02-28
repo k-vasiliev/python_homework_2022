@@ -14,6 +14,7 @@ points = [(1, 3), (5, 9), (0, 2), (15, 1), (17, 2), (0, 5), (2, 9)]
 a = points[0]
 b = points[1]
 min_value = ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+# min_value = None
 
 # идем по массиву
 for i in range(0, len(points)-2):
