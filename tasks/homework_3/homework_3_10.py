@@ -9,3 +9,8 @@
 """
 
 points = [(1, 3), (5, 9), (0, 2), (15, 1), (17, 2), (0, 5), (2, 9)]
+
+for x, y in points:
+    for x1, y1 in points:
+        s = pow((pow((x1 - x), 2) + pow((y1 - y), 2)), 0.5)
+        print(s)
