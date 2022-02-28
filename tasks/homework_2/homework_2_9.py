@@ -3,3 +3,11 @@
 # Выведите его наименьший натуральный делитель, отличный от 1
 
 user_input = input()
+
+i = 2
+n = int(user_input)
+
+while n % i != 0:
+    i += 1
+
+print(i)

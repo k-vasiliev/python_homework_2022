@@ -23,6 +23,15 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+student_1_disciplines = input()
+student_2_disciplines = input()
+student_3_disciplines = input()
+
+student_1_disciplines_set = set(student_1_disciplines.split(" "))
+student_2_disciplines_set = set(student_2_disciplines.split(" "))
+student_3_disciplines_set = set(student_3_disciplines.split(" "))
+
+student_1_2_inter = student_1_disciplines_set.intersection(student_2_disciplines_set)
+student_2_3_inter = student_2_disciplines_set.intersection(student_3_disciplines_set)
+
+print(len(student_1_2_inter.intersection(student_2_3_inter)))

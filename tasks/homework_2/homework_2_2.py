@@ -8,3 +8,7 @@
 
 input1 = input()
 input2 = input()
+
+len_input2 = len(input2)
+
+print(input1[len_input2:])
