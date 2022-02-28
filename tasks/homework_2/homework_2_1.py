@@ -1,12 +1,9 @@
-# пользователь вводит слово. Для простоты будем считать,
-# что слово не меньше 3 символов
-
-# Считайте ввод и распечатайте:
-
-# написали некоторое решение
-
-# длину слова
-# слово без первой буквы
-# последний символ слова
-# слово без последних двух букв
-# слово в uppercase
+polzovat_slovo = input('введите что-нибудь')
+print (polzovat_slovo[1:])
+print (polzovat_slovo[-1])
+print (polzovat_slovo[:-2])
+dlina = len(polzovat_slovo)
+print (dlina)
+print (polzovat_slovo.swapcase())
+print ('конец задания №1')
+print ('новое задание')
