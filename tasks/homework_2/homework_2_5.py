@@ -23,12 +23,10 @@ print(f"Возраст: {CURRENT_YEAR - st_birth_year}")
 # напечатайте оценки Ивана через запятую в формате "Оценки: {оценка1}, {оценка2}"
 
 st_all_marks = student[2]
-st_mark1 = st_all_marks[0]
-st_mark2 = st_all_marks[1]
-st_mark3 = st_all_marks[2]
-st_mark4 = st_all_marks[3]
-st_mark5 = st_all_marks[4]
-print(f"Оценки: {st_mark1}, {st_mark2}, {st_mark3}, {st_mark4}, {st_mark5}")
+print("Оценки: ", end=" ")
+for x in st_all_marks:
+    print(x, end=" ")
+print()
 
 # напечатайте средний балл Ивана в формате "Средний бал: {бал}"
 # Сумму элементов списка можно найти с помощью функции sum()
