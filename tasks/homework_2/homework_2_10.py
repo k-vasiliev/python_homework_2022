@@ -23,6 +23,15 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+#student_1_disciplines = #
+#student_2_disciplines = #
+#student_3_disciplines = #
+
+
+lines = list(map(lambda x: set(x.split()),
+                 "английский сольфеджио право\nматематика сольфеджио\nнемецкий право".split('\n')))
+result = lines[0]
+for i in lines[1:]:
+    result &= i
+
+print(len(result))

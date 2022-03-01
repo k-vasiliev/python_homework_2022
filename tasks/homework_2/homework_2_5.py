@@ -1,6 +1,3 @@
-CURRENT_YEAR = 2022
-student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
-
 """    Формат данных - ('имя', год рождения, [оценки])
 Выполните пункты ниже, используя переменную student   """
 # выведите фамилию и имя Ивана в формате "Студент: {Фамилия}, {Имя}"
@@ -11,8 +8,22 @@ student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
 # Сумму элементов списка можно найти с помощью функции sum()
 # Если средняя оценка Ивана больше или равна 8, то он получает повышенную стипендию.
 # Выведите "Повышенная стипендия: есть/нет" в зависимости от его оценок
-x = student
-words_list = student.split('Иван Питонов', 2001, [8, 7, 7, 9, 6], True')
-print(student[0])
-print(student[1])
-print(CURRENT_YEAR)
+CURRENT_YEAR = 2022
+student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
+age = student[1]
+assessment_sum = sum(student[2])
+assessment_len = len(student[2])
+assessment_average = assessment_sum / assessment_len
+
+print("Студент:", student[0][5:], student[0][0:4])
+print("Возраст:", CURRENT_YEAR - age)
+print("Оценки:", 8, 7, 7, 9, 6)
+print("Средний бал:", assessment_average)
+if assessment_average == 8:
+    print('Повышенная стипендия: есть')
+else:
+    print('Повышенная стипендия: нет')
+
+
+
+#print(CURRENT_YEAR)
