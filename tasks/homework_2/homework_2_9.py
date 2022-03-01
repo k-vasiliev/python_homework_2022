@@ -3,3 +3,12 @@
 # Выведите его наименьший натуральный делитель, отличный от 1
 
 user_input = input()
+# число
+n = int(user_input)
+#мин число ввода
+i = 2
+while i <= n:
+    if n % i == 0:
+        print(i)
+        break
+

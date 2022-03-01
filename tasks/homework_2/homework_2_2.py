@@ -8,3 +8,5 @@
 
 input1 = input()
 input2 = input()
+input1_split = input1.split(input2)
+print(input1_split[1:])

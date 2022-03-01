@@ -11,3 +11,15 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
+list_out = dict_of_lists['Список2']
+key = list_out[0]
+pop_key = key.pop('Windows')
+result = pop_key[1]
+print(result)
+
+
+
+
+
+
+#dict_of_lists{'Windows':'разработчик'}
