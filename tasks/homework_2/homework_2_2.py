@@ -2,8 +2,8 @@
 # Считайте ввод и распечатайте первую фразу с места, где заканчивается вторая
 # пример:
 # пользователь ввел "Hello, welcome":
-some_input1 = 'Hello, welcome'
+some_input1 = input('Первая фраза: ')
 # пользователь ввел "Hello":
-some_input2 = 'Hello'
+some_input2 = input('Вторая фраза: ')
 # вывод ", welcome":
-print('Hello, welcome'.replace('Hello', ' '))
+print(some_input1.replace(some_input2,' '))
