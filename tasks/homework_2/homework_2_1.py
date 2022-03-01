@@ -10,3 +10,7 @@
 # последний символ слова
 # слово без последних двух букв
 # слово в uppercase
+
+user_input = input()
+a = len(user_input)
+print (a,',', user_input[1:], ',', user_input[-1], ',', user_input[:-2], ',', user_input.upper())

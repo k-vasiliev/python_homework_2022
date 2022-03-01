@@ -8,3 +8,5 @@
 
 input1 = input()
 input2 = input()
+index = len(input2)
+print (input1[index:])

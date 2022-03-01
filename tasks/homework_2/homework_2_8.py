@@ -7,3 +7,13 @@
 dwarves = ["Балин", "Двалин", "Бифур", "Бофур",
          "Бомбур", "Оин", "Глоин", "Дори", "Нори",
          "Ори", "Фили", "Кили", "Торин"]
+
+list1 = list(dwarves[1:4])
+list2 = list(dwarves[0:13:2])
+list3 = list(dwarves[5:13:2])
+list4 = list(reversed(dwarves[6:13:2]))
+
+print(list1)
+print(list2)
+print(list3)
+print(list4)
