@@ -22,7 +22,18 @@
 Вывод:
 2
 """
+# list = ["английский", "немецкий", "право", "математика", "сольфеджио"]
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+student_1_disciplines = input()
+student_2_disciplines = input()
+student_3_disciplines = input()
+
+student_disciplines = list(set(student_1_disciplines.split()) & set(student_2_disciplines.split()) & set(student_3_disciplines.split()))
+student_disciplines_sorted = sorted(student_disciplines, key = lambda k : student_1_disciplines.index(k))
+
+if len(student_disciplines_sorted) > 0:
+    print(len(student_disciplines_sorted))
+else:
+    print(0)
+
+
