@@ -24,3 +24,14 @@ shops = [
 ]
 
 # ваш код
+itog_shops = dict()
+
+for line in shops:
+    test_shops = {line['товар']: line['количество']}
+    for key in test_shops:
+        if key not in itog_shops:
+            itog_shops.update(test_shops)
+        else:
+            itog_shops.update({key: sum([test_shops[key], itog_shops[key]])})
+
+print(itog_shops)

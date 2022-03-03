@@ -13,3 +13,15 @@
 """
 
 user_input = input()
+user_input_list = user_input.split()
+min_number = int(user_input_list[0])
+max_number = int(user_input_list[0])
+
+for number in user_input_list:
+    if int(number) < min_number:
+        min_number = int(number)
+    if int(number) > max_number:
+        max_number = int(number)
+
+print('Наибольшее число:', max_number)
+print('Наименьшее число:', min_number)

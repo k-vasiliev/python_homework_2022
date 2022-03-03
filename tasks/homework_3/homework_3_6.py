@@ -14,3 +14,13 @@
 """
 
 N = int(input())
+
+n = 0
+counter = 0
+all_number = list()
+
+while counter < N:
+    n += 1
+    all_number.append(n)
+    print(' '.join(map(str, all_number)))
+    counter += 1

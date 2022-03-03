@@ -9,3 +9,7 @@
 """
 
 number = int(input())
+number_list = list(str(number))
+number_set = set(str(number))
+
+print(f'{len(number_list)},{len(number_set)}')

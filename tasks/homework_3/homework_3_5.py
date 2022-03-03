@@ -14,3 +14,17 @@
 """
 
 N = int(input())
+
+counter = 0
+f1 = 1
+f2 = 1
+all_f = [1, 1]
+
+while counter <= N:
+    fn = f1 + f2
+    all_f.append(fn)
+    f1 = f2
+    f2 = fn
+    counter += 1
+
+print(', '.join(map(str, all_f[:N])))
