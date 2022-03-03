@@ -14,3 +14,15 @@
 """
 
 N = int(input())
+
+my_list = [0]
+
+for i in range(N):
+    if len(my_list) == 1:
+        my_list.append(i+1)
+    else:
+        x = my_list[i-1] + my_list[i]
+        my_list.append(x)
+
+print(', '.join(map(str, my_list[1:])))
+#0 тоже относится к последовательности Фибоначчи btw, но вывод имеет другой шаблон

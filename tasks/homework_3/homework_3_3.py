@@ -4,4 +4,6 @@
 
 """
 
+x = [i for i in range(1000, 3001) if i // 1000 % 2 == 0 and i // 100 % 10 % 2 == 0 and i % 100 // 10 % 2 == 0 and i % 10 % 2 == 0]
 
+print(x)

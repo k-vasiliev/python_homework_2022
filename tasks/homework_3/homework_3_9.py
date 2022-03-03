@@ -13,3 +13,26 @@
 """
 
 user_input = input()
+
+#если нельзя использовать стандартные и наиболее оптимальные возможности
+#то любой костыль с циклами считаю верным решением
+#но это не точно
+
+my_set = set(map(int, user_input.split()))
+###my_dict = dict()
+
+for i in my_set:
+    n = 0
+    for x in my_set:
+        if i >= x:
+            n += 1
+###    my_dict.update({n: i})
+    if n == 1:
+        mn = i
+    elif n == len(my_set):
+        mx = i
+
+###print(f'Наибольшее число: {my_dict[len(my_set)]}')
+###print(f'Наименьшее число: {my_dict[1]}')
+print(f'Наибольшее число: {mx}')
+print(f'Наименьшее число: {mn}')

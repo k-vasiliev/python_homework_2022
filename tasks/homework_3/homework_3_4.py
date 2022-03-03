@@ -24,3 +24,14 @@ shops = [
 ]
 
 # ваш код
+new_dict = dict()
+
+for s in shops:
+    temp_dict = {s['товар']: s['количество']}
+    for k in temp_dict:
+        if k not in new_dict:
+            new_dict.update(temp_dict)
+        else:
+            new_dict.update({k: sum([temp_dict[k], new_dict[k]])})
+
+print(new_dict)

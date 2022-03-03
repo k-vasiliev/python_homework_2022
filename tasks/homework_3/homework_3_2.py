@@ -10,3 +10,17 @@
 """
 
 user_input = input()
+
+symbols = [s for s in user_input.replace(' ', '')]
+
+numbers = 0
+letters = 0
+
+for x in symbols:
+    if x.isnumeric():
+        numbers += 1
+    else:
+        letters += 1
+
+print(numbers)
+print(letters)

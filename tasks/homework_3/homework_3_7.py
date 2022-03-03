@@ -10,3 +10,7 @@
 """
 
 input_string = (input())
+
+x = ''.join([i[0].upper() for i in input_string.split()])
+
+print(x)

@@ -9,3 +9,12 @@
 """
 
 number = int(input())
+
+my_list = list()
+my_set = set()
+
+for i in str(number):
+    my_list.append(i)
+    my_set.add(i)
+
+print(f'{len(my_list)}, {len(my_set)}')
