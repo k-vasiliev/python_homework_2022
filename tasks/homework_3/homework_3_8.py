@@ -9,3 +9,9 @@
 """
 
 number = int(input())
+
+str_number = str(number)
+set_number = set(str_number)
+
+print(len(str_number), end=",")
+print(len(set_number))

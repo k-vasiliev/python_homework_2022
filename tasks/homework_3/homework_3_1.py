@@ -15,3 +15,9 @@
 """
 
 user_input = input()
+split_input = user_input.split(" ")
+set_user_input = set(split_input)
+
+for x in set_user_input:
+    cnt_words = split_input.count(x)
+    print(f"{x}: {cnt_words}")

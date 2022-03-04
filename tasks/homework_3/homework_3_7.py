@@ -10,3 +10,6 @@
 """
 
 input_string = (input())
+
+split_input_string = input_string.split(" ")
+[print (x[0], end='') for x in split_input_string]

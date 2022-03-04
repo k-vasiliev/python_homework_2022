@@ -10,3 +10,12 @@
 """
 
 user_input = input()
+num = 0
+letter = 0
+
+for x in user_input:
+    num += x.isnumeric()
+    letter += x.isalpha()
+
+print(f"Цифры: {num}")
+print(f"Буквы: {letter}")

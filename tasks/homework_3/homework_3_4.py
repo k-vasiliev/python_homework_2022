@@ -24,3 +24,15 @@ shops = [
 ]
 
 # ваш код
+
+result_dict = dict()
+
+for every_shop in shops:
+    loop_dict = {every_shop['товар']: every_shop['количество']}
+    for x in loop_dict:
+        if x not in result_dict:
+            result_dict.update(loop_dict)
+        else:
+            result_dict.update({x: sum([loop_dict[x], loop_dict[x]])})
+
+print(result_dict)

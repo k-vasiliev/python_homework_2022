@@ -14,3 +14,14 @@
 """
 
 N = int(input())
+
+start_num = 0
+next_num = 1
+
+print(next_num)
+
+for x in range(N-1):
+    print_num = start_num + next_num
+    start_num = next_num
+    next_num = print_num
+    print(print_num)
