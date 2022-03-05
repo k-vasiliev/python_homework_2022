@@ -14,3 +14,8 @@
 """
 
 N = int(input())
+fib = [1, 1]
+for _ in range(1, N-1):
+    fib_n = int(fib[-2]) + int(fib[-1])
+    fib.append(fib_n)
+print(*fib, sep = ', ')
