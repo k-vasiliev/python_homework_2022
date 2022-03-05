@@ -14,3 +14,13 @@
 """
 
 N = int(input())
+
+list_new = [1]
+if len(list_new) < N:
+    while len(list_new) < N:
+        extra = list_new[-1] + 1
+        list_new.append(extra)
+else:
+    list_new = [1]
+
+print(*list_new, sep = " ")

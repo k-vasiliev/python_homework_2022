@@ -13,3 +13,13 @@
 """
 
 user_input = input()
+list1 = list(user_input.split(' '))
+list_enum = enumerate(list1)
+
+for index, value in list_enum:
+    if index == len(list1)-1:
+        break
+    next_value = list1[index+1]
+    if value > next_value:
+        print (f'{value}This bigger')
+

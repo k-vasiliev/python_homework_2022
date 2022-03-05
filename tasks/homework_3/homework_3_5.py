@@ -14,3 +14,17 @@
 """
 
 N = int(input())
+
+fibonachi = [1, 1]
+if len(fibonachi) < N:
+    while len(fibonachi) < N:
+        extra = fibonachi[-1] + fibonachi[-2]
+        fibonachi.append(extra)
+
+elif N == 2:
+    fibonachi = [1, 1]
+else:
+    fibonachi = [1]
+
+print(fibonachi)
+
