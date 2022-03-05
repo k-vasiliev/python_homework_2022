@@ -24,26 +24,16 @@ shops = [
 ]
 
 # ваш код
-##final_dict = {}
-##for dictionary in shops:
-  ##  supplement_dict = {dictionary['товар']: dictionary['количество']}
-   ## for position in supplement_dict:
-     ##   if position not in supplement_dict:
-       ##     final_dict.update(supplement_dict)
-        ##else:
-          ##  final_dict.update({position: sum([supplement_dict[position], final_dict[position]])})
-
-##print(final_dict)
-
-new_dict = dict()
-
-for s in shops:
-  temp_dict = {s['товар']: s['количество']}
-    for k in temp_dict:
-       if k not in new_dict:
-          new_dict.update(temp_dict)
+final_dict = {}
+for dictionary in shops:
+    supplement_dict = {dictionary['товар']: dictionary['количество']}
+    for position in supplement_dict:
+        if position not in supplement_dict:
+            final_dict.update(supplement_dict)
         else:
-          new_dict.update({k: sum([temp_dict[k], new_dict[k]])})
+            final_dict.update({position: sum([supplement_dict[position], final_dict[position]])})
 
-print(new_dict)
+print(final_dict)
+
+
 
