@@ -23,7 +23,13 @@ shops = [
     {'товар': 'яблоки', 'количество': 750}
 ]
 
+new_shops = dict()
 for d in shops:
-    for key, value in d:
-        if value  ddd
+    if not d['товар'] in new_shops:
+        new_shops[d['товар']] = 0
+    new_shops[d['товар']] = new_shops[d['товар']] + d['количество']
+
+print(new_shops)
+
+
 
