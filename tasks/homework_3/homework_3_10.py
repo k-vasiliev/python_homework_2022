@@ -9,20 +9,19 @@
 """
 
 points = [(1, 3), (5, 9), (0, 2), (15, 1), (17, 2), (0, 5), (2, 9)]
-max_p = max(points)
-min_p = min(points)
-max_dist = ((max_p[0] - min_p[0])**2 + (max_p[1] - min_p[1])**2)**0.5
-min_dist = max_dist
-for point in points:
-        print(points[point], point[1])
 
-"""for x, y in points:
-    for x1, y1 in points:
-        if x != x1 and y != y1:
-            s = pow((pow((x1 - x), 2) + pow((y1 - y), 2)), 0.5)
-            if s < min_dist:
-                min_dist = s
-                min_dist_points = [(x, y), (x1, y1)]
-                print(min_dist)
-                print(min_dist_points)
-"""
+#найдем расстояние между первой и второй точкой и скажем, что оно минимальное
+point_1 = points[0]
+point_2 = points[1]
+dist_min = ((point_1[0] - point_2[0]) ** 2 + (point_1[1] - point_2[1]) ** 2) ** 0.5
+# найдем расстояние между каждой парой точек. Если оно меньше dist_min, то оно минимально в этой итерации
+for tup1 in points:
+        for tup2 in points:
+                if tup1 != tup2:
+                        dist = ((tup1[0] - tup2[0])**2 + (tup1[1] - tup2[1])**2) ** 0.5
+                        if dist < dist_min:
+                                dist_min = dist
+                                points_min_dist = [tup1, tup2]
+print(f'{points_min_dist[0]},{points_min_dist[1]}')
+
+
