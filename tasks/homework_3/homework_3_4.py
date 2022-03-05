@@ -25,5 +25,5 @@ shops = [
 
 for d in shops:
     for key, value in d:
-        if value
+        if value  ddd
 
