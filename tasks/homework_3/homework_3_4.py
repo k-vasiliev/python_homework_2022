@@ -27,13 +27,11 @@ shops = [
 final_dict = {}
 for dictionary in shops:
     supplement_dict = {dictionary['товар']: dictionary['количество']}
-    for position in supplement_dict:
-        if position not in supplement_dict:
-            final_dict.update(supplement_dict)
-        else:
-            final_dict.update({position: sum([supplement_dict[position], final_dict[position]])})
+    if dictionary['товар'] not in dict.keys(final_dict):
+        final_dict.update(supplement_dict)
+    else:
+        final_dict[dictionary['товар']] = final_dict[dictionary['товар']] + dictionary['количество']
+
 
 print(final_dict)
-
-
 
