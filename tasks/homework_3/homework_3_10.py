@@ -7,5 +7,12 @@
 (1, 5),(3, 8)
 
 """
-
+import math
 points = [(1, 3), (5, 9), (0, 2), (15, 1), (17, 2), (0, 5), (2, 9)]
+print(points[0])
+print(len(points))
+i = 0
+while i <= len(points):
+    x = points[i]
+
+

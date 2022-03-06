@@ -3,5 +3,10 @@
 Программа должна выдавать результат в виде разделенной запятыми строки
 
 """
+user_list = ''
+for i in range(1000, 3001):
+    if i % 2 == 0:
+        user_list = user_list + ',' + str(i)
+print(user_list)
 
 

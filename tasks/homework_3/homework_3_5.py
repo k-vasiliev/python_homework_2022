@@ -12,5 +12,12 @@
 Вывод: 1, 1, 2, 3, 5, 8
 
 """
-
 N = int(input())
+user_list = [1, 1]
+i = 0
+while i <= N - 3:
+    x = user_list[i] + user_list[i + 1]
+    user_list.append(x)
+    i += 1
+user_string = ', '.join(str(i) for i in user_list)
+print(user_string)

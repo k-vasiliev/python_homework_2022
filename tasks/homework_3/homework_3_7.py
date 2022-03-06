@@ -9,4 +9,8 @@
 
 """
 
-input_string = (input())
+input_string = input()
+list_user = input_string.split()
+
+list_comp = [n[0] for n in list(list_user)]
+print(''.join(list_comp))

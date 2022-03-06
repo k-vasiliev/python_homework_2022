@@ -15,11 +15,17 @@ shops = [
 {'яблоки': 1150, 'конфеты': 300}
 
 """
-
 shops = [
     {'товар': 'яблоки', 'количество': 400},
     {'товар': 'конфеты', 'количество': 300},
     {'товар': 'яблоки', 'количество': 750}
 ]
 
-# ваш код
+user_dict = {}
+for dict_shops in shops:
+    one_dict = {dict_shops['товар']: dict_shops['количество']}
+    if dict_shops['товар'] not in dict.keys(user_dict):
+        user_dict.update(one_dict)
+    else:
+        user_dict[dict_shops['товар']] = user_dict[dict_shops['товар']] + dict_shops['количество']
+print(user_dict)
