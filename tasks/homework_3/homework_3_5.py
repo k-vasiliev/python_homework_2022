@@ -13,4 +13,14 @@
 
 """
 
-N = int(input())
+N = int(input('Введите число: '))
+
+f1 = 1
+f2 = 1
+print(f1, f2, end=" ")
+for i in range(3,N+1):
+    print(f1+f2, end=" ")
+    b = f1
+    f1 = f2
+    f2 = b+f1
+print()

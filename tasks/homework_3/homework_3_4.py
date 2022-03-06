@@ -23,3 +23,12 @@ shops = [
 ]
 
 # ваш код
+new_shops = dict()
+for positions in shops:
+    merge = {positions['товар']: positions['количество']}
+    for N in merge:
+        if N not in new_shops:
+            new_shops.update(merge)
+        else:
+            new_shops.update({N: sum([merge[N], new_shops[N]])})
+print(new_shops)

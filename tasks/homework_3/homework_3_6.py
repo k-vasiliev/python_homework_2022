@@ -13,4 +13,8 @@
 
 """
 
-N = int(input())
+N = int(input('Введите число: '))
+a = ''
+for i in range(1, N + 1):
+    a += str(i)
+    print(a)

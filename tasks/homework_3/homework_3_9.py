@@ -12,4 +12,18 @@
 
 """
 
-user_input = input()
+user_input = input('Введите числа через пробел: ')
+a = user_input.split(" ")
+
+
+ln = a[0] if a else None
+for i in a:
+    if i>ln:
+        ln=i
+print("Наибольшее: ",ln)
+
+ln = a[0] if a else None
+for i in a:
+    if i<ln:
+        ln=i
+print("Наименьшее: ",ln)

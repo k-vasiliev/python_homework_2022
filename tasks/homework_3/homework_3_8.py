@@ -8,4 +8,9 @@
 
 """
 
-number = int(input())
+number = int(input("Введите число: "))
+quantity = str(number)
+unique = set(quantity)
+
+print("Всего цифр:", len(quantity))
+print("Уникальных цифр:", len(unique))

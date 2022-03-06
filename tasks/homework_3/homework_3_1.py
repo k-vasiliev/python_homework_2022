@@ -13,5 +13,15 @@
 никогда:1
 
 """
+# привет как дела что здесь что как
+user_input = input("Введите фразу: ")
+words = user_input.split()
+wordsdict = {}
+for word in words:
+    word = word.lower()
+    if word not in wordsdict:
+        wordsdict[word] = 1
+    else:
+        wordsdict[word] = wordsdict[word] + 1
+print(wordsdict)
 
-user_input = input()
