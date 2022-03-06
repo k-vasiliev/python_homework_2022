@@ -1,18 +1,14 @@
 """
 Пользователь вводит строку с клавиатуры
 Найти частоту слов в строке
-
 Вход: "Я не кидал никого никогда"
-
 Выход:
-
 Я:1
 не:1
 кидал:1
 никого:1
 никогда:1
-
 """
-
-user_input = input()
-user_input = input()
+some_text = input('Ввести строку с клавиатуры: ').split()
+for i in range(len(some_text)):
+    print(f'{some_text[i]}:{some_text.count(some_text[i])}')
