@@ -23,4 +23,21 @@ shops = [
     {'товар': 'яблоки', 'количество': 750}
 ]
 
-# ваш код
+goods = []
+
+for i in shops:
+    goods_key = i.get('товар')
+    quantity = i.get('количество')
+    goods_dict = {goods_key: quantity}
+    goods.append(goods_dict)
+
+result = {}
+
+for dictionary in goods:
+    result.update(dictionary)
+
+# сложить количество яблок я не смог
+print(result)
+
+
+
