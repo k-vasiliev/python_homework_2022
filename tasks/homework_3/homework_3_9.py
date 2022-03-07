@@ -13,3 +13,19 @@
 """
 
 user_input = input()
+
+user_input_str_list = user_input.split()
+
+user_input_int_list = list(map(lambda x: int(x), user_input_str_list))
+
+max_number = user_input_int_list[0]
+min_number = user_input_int_list[0]
+
+for i in user_input_int_list:
+    if i > max_number:
+        max_number = i
+    elif i < min_number:
+        min_number = i
+
+print('Наибольшее число:', max_number)
+print('Наименьшее число:', min_number)

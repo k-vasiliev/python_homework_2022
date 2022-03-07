@@ -14,3 +14,16 @@
 """
 
 N = int(input())
+
+number1 = 1
+number2 = 1
+
+fib_list = [number1]
+
+for i in range(2, N + 1):
+    number2, number1 = number1, number2 + number1
+    fib_list.append(number2)
+
+fib_list_to_str_items = list(map(str, fib_list))
+
+print(', '.join(fib_list_to_str_items))
