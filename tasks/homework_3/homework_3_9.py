@@ -23,6 +23,6 @@ for z in user_input:
 min_value = user_input[0]
 for y in user_input:
     if y < min_value:
-      min_value = y
+        min_value = y
 
 print(min_value)

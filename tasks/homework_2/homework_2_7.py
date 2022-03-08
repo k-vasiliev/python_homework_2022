@@ -11,4 +11,4 @@ dict_of_lists = {
         {'IBM': ['компания-производитель', 'разработчик'], 'IPv6': 'интернет-протокол'}
     ]
 }
-print(dict_of_lists['Список2']['Windows'][1])
+print(dict_of_lists['Список2'][0]['Windows'][1])

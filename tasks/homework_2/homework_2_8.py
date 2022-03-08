@@ -13,3 +13,8 @@ list3 = dwarves[5::2]
 x = dwarves [::-1]
 y = x[0::2]
 list4 = y[0:4]
+
+print(list1)
+print(list2)
+print(list3)
+print(list4)

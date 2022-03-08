@@ -11,7 +11,7 @@ print(len(user_input))
 # слово без первой буквы
 print(user_input[1:])
 # последний символ слова
-print(user_input[:-1])
+print(user_input[-1:])
 # слово без последних двух букв
 print(user_input[:-2])
 # слово в uppercase

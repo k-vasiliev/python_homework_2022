@@ -2,8 +2,8 @@
 user_input = input()
 
 # Считайте ввод и если строка является числом, то напечатайте "Это число!"
-i = user_input.isdigit
-if i:
+i = user_input.isdigit()
+if i == True:
     print("Это число!")
 else:
     print("Это не число!")
