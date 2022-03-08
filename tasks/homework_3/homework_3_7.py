@@ -10,3 +10,8 @@
 """
 
 input_string = (input())
+
+upper = 'ЙЦУКЕНГШЩЗХФЫВАПРОЛДЖЭЯЧСМИТБЮ'
+a = [i for i in input_string if i in upper]
+
+print(''.join(list(map(str, a))))

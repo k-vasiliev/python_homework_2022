@@ -12,4 +12,17 @@
 
 """
 
-user_input = input()
+user_input = list(map(int, input().split()))
+
+max_value = user_input[0]
+
+for x in user_input:
+    if x > max_value:
+      print(x)
+
+min_value = user_input[0]
+for y in user_input:
+    if y < min_value:
+      min_value = y
+
+print(min_value)
