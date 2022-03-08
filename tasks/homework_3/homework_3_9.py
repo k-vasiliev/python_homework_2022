@@ -18,7 +18,7 @@ max_value = user_input[0]
 
 for x in user_input:
     if x > max_value:
-      print(x)
+        print(x)
 
 min_value = user_input[0]
 for y in user_input:
