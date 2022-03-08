@@ -16,9 +16,9 @@ user_input = list(map(int, input().split()))
 
 max_value = user_input[0]
 
-for x in user_input:
-    if x > max_value:
-        print(x)
+for z in user_input:
+    if z > max_value:
+        print(z)
 
 min_value = user_input[0]
 for y in user_input:
