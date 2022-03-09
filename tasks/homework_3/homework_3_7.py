@@ -8,5 +8,8 @@
 Выход: "КГБ"
 
 """
+#words = input("Вход: ")
+#abbr = ''.join(word[0] for word in words.upper().split())
+#print("Выход: ", abbr)
 
-input_string = (input())
+print(''.join(word[0] for word in input().upper().split()))

@@ -6,7 +6,7 @@
 # пользователь ввел "Hello"
 # вывод ", welcome"
 
-input1 = input()
-input2 = input()
-input_replace = "Hello".replace("Hello","welcome")
-print(input_replace)
+input1 = input("пользователь ввел: ")
+input2 = input("пользователь ввел: ")
+input_replace = input2.replace("Hello","welcome")
+print("вывод: ", input_replace)

@@ -22,4 +22,9 @@ shops = [
     {'товар': 'яблоки', 'количество': 750}
 ]
 
-# ваш код
+shops_dict = dict(shops) # Не нашел решения
+print(type(shops_dict))
+#shops_dict["товар"]
+
+for x in shops:
+    print(index, element)

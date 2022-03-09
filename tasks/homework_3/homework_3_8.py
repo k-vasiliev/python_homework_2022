@@ -7,5 +7,6 @@
 Выход: 6,4
 
 """
-
-number = int(input())
+x_input = input("Введите число: " )
+number = len(x_input), len(set(x_input))
+print(number)
