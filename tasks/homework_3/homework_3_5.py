@@ -14,3 +14,19 @@
 """
 
 N = int(input())
+counter = 0
+n1 = 1
+n2 = 1
+ns = [1, 1]
+
+while counter <= N:
+    Ns = n1 + n2
+    ns.append(Ns)
+    n1 = n2
+    n2 = Ns
+    counter += 1
+print(','.join(map(str, ns[:N])))
+
+
+
+

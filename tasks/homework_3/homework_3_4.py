@@ -21,5 +21,16 @@ shops = [
     {'товар': 'конфеты', 'количество': 300},
     {'товар': 'яблоки', 'количество': 750}
 ]
-
 # ваш код
+#some_dict = dict(map(list, shops))
+new_dict = dict()
+for some_dict in shops:
+       line = {some_dict['товар']: some_dict['количество']}
+       for key in line:
+        if key not in new_dict:
+         new_dict.update(line)
+        else:
+         new_dict.update({key: sum([line[key], new_dict[key]])})
+print(new_dict)
+
+#print(x.values())

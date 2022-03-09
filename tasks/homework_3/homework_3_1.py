@@ -15,3 +15,8 @@
 """
 
 user_input = input()
+frequency = dict()
+for word in user_input.split():
+    count = frequency.get(word, 0)
+    frequency[word] = count+1
+    print(word, ":", frequency[word])

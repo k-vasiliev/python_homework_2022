@@ -5,3 +5,6 @@
 """
 
 
+for element in range(1000, 3000): #можно: for element in range(1000, 3000, 2)
+    if element % 2 == 0:
+      print(int(element), end=',')
