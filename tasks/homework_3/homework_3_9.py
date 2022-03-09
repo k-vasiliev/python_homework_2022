@@ -13,3 +13,13 @@
 """
 
 user_input = input()
+values = user_input.split()
+max_values = float("-inf")
+min_values = float("inf")
+for i in values:
+    if int(i) > max_values:
+        max_values = int(i)
+    elif int(i) <= min_values:
+        min_values = int(i)
+print(f'Наибольшее число:', max_values)
+print(f'Наименьшее число:', min_values)
