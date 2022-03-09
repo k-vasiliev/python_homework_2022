@@ -4,8 +4,8 @@
 
 """
 
-x=[]
-x=list(range(1000, 3002, 2))
+x = []
+for i in range(1000, 3001):
+    if i % 2 == 0 and i // 10 % 2 == 0 and i // 100 % 2 == 0 and i // 1000 % 2 == 0:
+        x.append(i)
 print(x)
-
-# Прошу подсказки!
