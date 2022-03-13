@@ -13,4 +13,12 @@
 
 """
 
-N = int(input()) # не нашел решения
+fib1 = fib2 = 1
+
+N = int(input("Ввод: "))
+
+print(fib1, fib2, end=' ')
+
+for i in range(2, N):
+    fib1, fib2 = fib2, fib1 + fib2
+    print(fib2, end=' ')

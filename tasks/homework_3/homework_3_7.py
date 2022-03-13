@@ -12,4 +12,5 @@
 #abbr = ''.join(word[0] for word in words.upper().split())
 #print("Выход: ", abbr)
 
-print(''.join(word[0] for word in input().upper().split()))
+print(''.join(word[0] for word in input().upper().split()))           # Решение
+

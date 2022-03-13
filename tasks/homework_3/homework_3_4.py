@@ -22,9 +22,13 @@ shops = [
     {'товар': 'яблоки', 'количество': 750}
 ]
 
-shops_dict = dict(shops) # Не нашел решения
-print(type(shops_dict))
-#shops_dict["товар"]
+#shops_dict = dict(shops) # Не нашел решения
+apple = (shops[0]['товар'])
+num_a1 = (shops[0]['количество'])
+num_a2 = (shops[2]['количество'])
+apple_num = str(num_a1 + num_a2)
 
-for x in shops:
-    print(index, element)
+bon = (shops[1]['товар'])
+num_b1 = (shops[1]['количество'])
+print(apple,':', apple_num,',', bon,':', num_b1)
+
