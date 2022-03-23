@@ -14,8 +14,18 @@ the_idiot_url = 'https://www.gutenberg.org/files/2638/2638-0.txt'
 response = urllib.request.urlopen(the_idiot_url)
 text = response.read().decode('utf-8')
 
-start = re.search(r'\*\*\* START OF THIS PROJECT GUTENBERG EBOOK THE IDIOT \*\*\*', raw).end()
+# Индекс начала первой главы. Не очень понятно, что считать первой главой? "PART I" или просто "I". Сделал оба условия
+# start = re.search(r'\bI\.', text).end()
+start = re.search(r'PART\sI\r\n\r', text).end()
 # Индекс конца первой главы
-end = re.search(r'II', text).start()
+# end = re.search(r'\bII\.', text).start()
+end = re.search(r'PART\sII\r\n\r', text).start()
 
-# ваше решение
+# берем текст первой главы
+chapter1 = text[start:end]
+# ищем вхождения
+result = re.findall(r'\b[Tt]he\s', chapter1)
+# считаем число
+count = len(result)
+
+print(count)
