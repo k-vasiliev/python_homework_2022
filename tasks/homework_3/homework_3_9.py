@@ -15,13 +15,13 @@
 user_input = input()
 user_inp_list = user_input.split(' ')
 user_inp_list = [int(n) for n in user_inp_list]
-max = user_inp_list[0]
-min = user_inp_list[0]
+max_ = user_inp_list[0]
+min_ = user_inp_list[0]
 for x in user_inp_list:
-   if x > max:
-       max = x
+   if x > max_:
+       max_ = x
 for x in user_inp_list:
-    if x < min:
-        min = x
-print('Наибольшее число:', max)
-print('Наименьшее число:', min)
+    if x < min_:
+        min_ = x
+print('Наибольшее число:', max_)
+print('Наименьшее число:', min_)
