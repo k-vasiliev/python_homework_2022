@@ -9,12 +9,25 @@
 
 
 def debug(func):
-    pass
-
+    import datetime
+    def wrapper(*args, **kwargs):
+        print(f"Function's arguments: ", end='')
+        print(*args)
+        print(f"Start func: {datetime.datetime.now()}")
+        print("Function's result: ", end='')
+        func(*args, **kwargs)
+        print(f"End func: {datetime.datetime.now()}")
+    return wrapper
 
 # к этой функции надо применить декоратор
+
+
 def example_function(argument):
-    return argument[::-1]
+    return print(argument[::-1])
 
 
-example_function("Hello! Debug me, please")
+example_function = debug(example_function)
+
+
+print_example_function = example_function("Hello! Debug me, please")
+

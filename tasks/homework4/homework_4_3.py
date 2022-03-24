@@ -17,7 +17,8 @@ def find_abbreviations(text: str) -> list:
     """
     Принимает текст и возвращает список из аббревиатур
     """
-    pass  # тут ваше решение
+    abbreviations_list = re.findall(r'\b[А-Я]{2,}\s?(?:[А-Я]{2,}\s?)+', text)
+    return abbreviations_list
 
 
 example_input = 'Это курс информатики соответствует ФГОС и ПООП, это подтверждено ФГУ ФНЦ НИИСИ РАН'
