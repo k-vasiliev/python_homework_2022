@@ -30,4 +30,3 @@ example_function = debug(example_function)
 
 
 print_example_function = example_function("Hello! Debug me, please")
-
