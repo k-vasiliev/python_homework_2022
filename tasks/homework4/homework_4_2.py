@@ -10,7 +10,7 @@
 def debug(func):
     import time
     def wrapper(func_arg):
-        print('Аргументы функции: {}'.format(func_arg))
+        print('Аргумент(ы) функции: {}'.format(func_arg))
         func_start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
         function_result = func(func_arg)
         func_end_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
