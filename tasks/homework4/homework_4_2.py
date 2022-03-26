@@ -6,14 +6,16 @@
 
 Примените декоратор к example_function
 """
+import datetime
+
 
 def debug(func):
-    import time
+    import datetime
     def wrapper(func_arg):
         print('Аргумент(ы) функции: {}'.format(func_arg))
-        func_start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        func_start_time = datetime.datetime.now()
         function_result = func(func_arg)
-        func_end_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        func_end_time = datetime.datetime.now()
         print(f'Время начала работы фунукции: {func_start_time} \nВремя окончания работы фунукции: {func_end_time}')
         print(f'Результат работы функции: {function_result}')
     return wrapper
@@ -25,4 +27,3 @@ def example_function(argument):
 
 
 example_function("Hello! Debug me, please")
-
