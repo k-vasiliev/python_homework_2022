@@ -6,19 +6,22 @@
 Помогите ему написать ему такую функцию.
 Будем считать аббревиатурой слова только лишь из заглавных букв (как минимум из двух).
 Если несколько таких слов разделены пробелами, то они считаются одной аббревиатурой.
-
-
 """
 
 import re
-
+"""
+#draft
 
 def find_abbreviations(text: str) -> list:
-    """
-    Принимает текст и возвращает список из аббревиатур
-    """
-    pass  # тут ваше решение
-
+    result_abb_list = []
+    for abb in re.findall(r'(?:[A-Я]{2,}\s*)+', text):
+        clear_abb = abb.strip()
+        result_abb_list.append(clear_abb)
+    return result_abb_list
+"""
+def find_abbreviations(text: str) -> list:
+    return re.findall(r'(?:[А-ЯA-Z]{2,}(?:\s[А-ЯA-Z]{2,})+)|[А-ЯA-Z]{2,}', text)
 
 example_input = 'Это курс информатики соответствует ФГОС и ПООП, это подтверждено ФГУ ФНЦ НИИСИ РАН'
 print(find_abbreviations(example_input))
+
