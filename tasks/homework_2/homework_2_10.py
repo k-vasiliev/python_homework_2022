@@ -23,6 +23,6 @@
 2
 """
 
-student_1_disciplines = #
-student_2_disciplines = #
-student_3_disciplines = #
+student_1_disciplines = ''
+student_2_disciplines = ''
+student_3_disciplines = ''
