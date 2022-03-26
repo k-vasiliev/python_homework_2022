@@ -19,6 +19,7 @@ def find_abbreviations(text: str) -> list:
         result_abb_list.append(clear_abb)
     return result_abb_list
 """
+#актуальное решение
 def find_abbreviations(text: str) -> list:
     return re.findall(r'(?:[А-ЯA-Z]{2,}(?:\s[А-ЯA-Z]{2,})+)|[А-ЯA-Z]{2,}', text)
 
