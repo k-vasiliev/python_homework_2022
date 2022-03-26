@@ -14,5 +14,5 @@ def find_abbreviations(text: str) -> list:
     return re.findall(r'(?:[А-ЯA-Z]{2,}(?:\s[А-ЯA-Z]{2,})+)|[А-ЯA-Z]{2,}', text) #так не захватит пробелы, а выведет чистые аббревиатуры
 
 example_input = 'Это курс информатики соответствует ФГОС и ПООП, это подтверждено ФГУ ФНЦ НИИСИ РАН'
-print(find_abbreviations(example_input))
 
+print(find_abbreviations(example_input))
