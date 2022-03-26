@@ -9,17 +9,7 @@
 """
 
 import re
-"""
-#draft
 
-def find_abbreviations(text: str) -> list:
-    result_abb_list = []
-    for abb in re.findall(r'(?:[A-Я]{2,}\s*)+', text):
-        clear_abb = abb.strip()
-        result_abb_list.append(clear_abb)
-    return result_abb_list
-"""
-#актуальное решение
 def find_abbreviations(text: str) -> list:
     return re.findall(r'(?:[А-ЯA-Z]{2,}(?:\s[А-ЯA-Z]{2,})+)|[А-ЯA-Z]{2,}', text)
 
