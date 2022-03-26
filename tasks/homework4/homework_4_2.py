@@ -6,15 +6,17 @@
 
 Примените декоратор к example_function
 """
+import time
 
 
 def debug(func):
-    pass
+
 
 
 # к этой функции надо применить декоратор
+
 def example_function(argument):
     return argument[::-1]
 
-
+@debug
 example_function("Hello! Debug me, please")
