@@ -13,8 +13,14 @@ the_idiot_url = 'https://www.gutenberg.org/files/2638/2638-0.txt'
 response = urllib.request.urlopen(the_idiot_url)
 text = response.read().decode('utf-8')
 
-start = re.search(r'I.', text).end()
+start = re.search(r'I\.', text).end()
 # Индекс конца первой главы
-end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
+end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).end()
 
-# ваше решение
+
+def the_counter(text_local: str):
+    the_all_list = re.findall(r'\b(the|The)\b', text_local[start:end])
+    return len(the_all_list)
+
+
+print(the_counter(text))
