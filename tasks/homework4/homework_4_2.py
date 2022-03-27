@@ -6,13 +6,21 @@
 
 Примените декоратор к example_function
 """
+from datetime import datetime
 
 
 def debug(func):
-    pass
+    def wrapper(*args):
+        print(*args)
+        print("Время начала работы функции", datetime.now())
+        func(*args)
+        print("Время окончания работы функции", datetime.now())
+        print(func(*args))
+    return wrapper
 
 
 # к этой функции надо применить декоратор
+@debug
 def example_function(argument):
     return argument[::-1]
 
