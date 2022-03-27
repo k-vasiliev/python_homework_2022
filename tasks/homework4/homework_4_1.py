@@ -11,22 +11,3 @@ def fibonacci(N):
 
 result = list(fibonacci(int(input("Введите число: "))))
 print(result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

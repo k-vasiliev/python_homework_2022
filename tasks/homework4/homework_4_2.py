@@ -24,4 +24,3 @@ def example_function(argument):
     return argument[::-1]
 
 example_function("Hello! Debug me, please")
-
