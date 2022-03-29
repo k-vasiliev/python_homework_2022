@@ -14,3 +14,10 @@
 """
 
 N = int(input())
+
+i = 1
+x = []
+while i <= N:
+    x.append(i)
+    i = i + 1
+    print(x)

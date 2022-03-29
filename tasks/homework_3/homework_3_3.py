@@ -4,4 +4,7 @@
 
 """
 
+for it in range(1000, 3002):
+    if it % 2 == 0:
+        print(it, end=", ")
 

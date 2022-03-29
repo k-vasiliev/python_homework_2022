@@ -15,3 +15,11 @@
 """
 
 user_input = input()
+
+words_dict = {}
+
+for i in user_input.split():
+    words_dict[i] = words_dict.get(i, 0) + 1
+
+for key in words_dict:
+    print("{} : {}".format(key, words_dict[key]))
