@@ -1,16 +1,14 @@
 """
 Напишите функцию, которая ищет в тексте слова, начинающиеся на а и на е
-
 """
 
 import re
 
 
 def find_words_starts_with_ae(text: str) -> list:
-    """
-    Принимает текст и возвращает список из слов
-    """
-    pass  # тут ваше решение
+    global example_input
+    ae = re.findall("\\ba\w+|\\be\w+", example_input)
+    return list(ae)
 
 
 example_input = "The following example creates an ArrayList with a capacity of 50 elements.\

@@ -11,7 +11,8 @@
 
 input_string = (input())
 
-upper = 'ЙЦУКЕНГШЩЗХФЫВАПРОЛДЖЭЯЧСМИТБЮ'
-a = [i for i in input_string if i in upper]
+words = input_string.split(" ")
 
-print(''.join(list(map(str, a))))
+words_abb = [words[0] for words in words]
+
+print(''.join(list(map(str, words_abb))))

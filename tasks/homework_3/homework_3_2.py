@@ -13,9 +13,9 @@ user_input = input()
 count1 = 0
 count2 = 0
 for i in user_input:
-    if i in '1234567890':
+    if i.isdigit() is True:
         count1 += 1
-    if i in 'йцукенгшщзхъфывапролджэячсмитьбю':
+    if i.isalpha() is True:
         count2 += 1
 
 print(f"Цифры: {count1}")

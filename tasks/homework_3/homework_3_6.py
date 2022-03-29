@@ -15,8 +15,9 @@
 
 N = int(input())
 
-i = 0
-while i < N:
-
+i = 1
+x = []
+while i <= N:
+    x.append(i)
     i = i + 1
-    print(i, end=" ")
+    print(x)

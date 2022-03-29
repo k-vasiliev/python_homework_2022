@@ -18,11 +18,13 @@ max_value = user_input[0]
 
 for z in user_input:
     if z > max_value:
-        print(z)
+        max_value = z
+
+print(f"Наибольшее значение: {max_value}")
 
 min_value = user_input[0]
 for y in user_input:
     if y < min_value:
         min_value = y
 
-print(min_value)
+print(f"Наименьшее значение: {min_value}")
