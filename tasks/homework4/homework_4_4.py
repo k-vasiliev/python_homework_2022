@@ -6,11 +6,11 @@
 import re
 
 
-def find_words_starts_with_ae(text: str) -> list:
+def find_words_starts_with_ae(text: str):
     """
     Принимает текст и возвращает список из слов
     """
-    pass  # тут ваше решение
+    re.split(r"\b[AaEe]\w*", text)  # тут ваше решение
 
 
 example_input = "The following example creates an ArrayList with a capacity of 50 elements.\
