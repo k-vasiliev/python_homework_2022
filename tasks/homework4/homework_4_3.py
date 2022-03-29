@@ -25,4 +25,3 @@ def find_abbreviations(text: str) -> list:
 
 # 'Это курс информатики соответствует ФГОС и ПООП, это подтверждено ФГУ ФНЦ НИИСИ РАН'
 print(find_abbreviations(example_input))
-

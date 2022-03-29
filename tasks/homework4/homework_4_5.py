@@ -26,4 +26,3 @@ first_character = text[start:end]
 find_the = re.findall("\\b[Tt]he\\b", first_character)
 
 print(len(find_the))
-

@@ -26,4 +26,3 @@ def example_function(argument):
 
 example_function = debug(example_function)
 example_function("Hello! Debug me, please")
-
