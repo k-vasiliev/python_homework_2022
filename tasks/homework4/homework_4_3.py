@@ -13,12 +13,12 @@
 import re
 
 
-def find_abbreviations(text: str) -> list:
+def find_abbreviations(text: str):
+
     """
     Принимает текст и возвращает список из аббревиатур
     """
-    pass  # тут ваше решение
-
+    return re.findall(r"[А-Я]{2,}(?:\s[А-Я]{2,})+|[А-Я]{2,}",text)  # тут ваше решение
 
 example_input = 'Это курс информатики соответствует ФГОС и ПООП, это подтверждено ФГУ ФНЦ НИИСИ РАН'
 print(find_abbreviations(example_input))
