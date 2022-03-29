@@ -8,11 +8,13 @@
 Выход: "КГБ"
 
 """
-
+"""
 input_string = (input())
 new = [i for i in input_string if i.upper() in i]
 print(''.join(map(str, new)))
-
-
+"""
+input_string = (input())
+for a in input_string.split():
+    if a(<\)
 
 

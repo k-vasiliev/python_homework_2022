@@ -9,9 +9,14 @@
 """
 
 number = int(input())
+number_list = list(str(number))
+number_set = set(number_list)
+unique = []
+count = 0
 
-count = list(str(number))
-unique = set(str(count))
-print(f'{len(count)},{len(unique)}')
+for i in number_set:
+    if i not in unique:
+        count += 1
+        unique.append(i)
 
-
+print(f'{len(number_list)},{count}')
