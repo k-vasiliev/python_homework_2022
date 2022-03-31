@@ -3,18 +3,17 @@
 * печатает все аргументы функции, на которой была вызвана
 * печатает время начала и окончания работы функции
 * печатает результат работы функции
-
 Примените декоратор к example_function
 """
-
-
+import datetime
 def debug(func):
-    pass
-
-
-# к этой функции надо применить декоратор
+    def wrapper(*args):
+        print(*args)
+        print(f'Start: {datetime.datetime.now()}')
+        print(f'Finish: {datetime.datetime.now()}')
+        print(func(*args))
+    return wrapper
+@debug
 def example_function(argument):
     return argument[::-1]
-
-
-example_function("Hello! Debug me, please")
+example_function("Hello, world!")
