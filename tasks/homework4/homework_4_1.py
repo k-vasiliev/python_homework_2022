@@ -3,7 +3,7 @@
 Она должна возвращать список из чисел. Используйте типизацию!
 """
 
-def fibonacci(N:int) -> list:
+def fibonacci(N: int) -> list:
     f1, f2 = 1, 1
     for i in range(N):
         yield f1
