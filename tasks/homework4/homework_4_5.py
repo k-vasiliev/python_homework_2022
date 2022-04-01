@@ -19,6 +19,6 @@ end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
 
 
 # ваше решение
-chapter_one = text[start:end]
+chapter_one = text[start: end]
 all_the = re.findall(r"\b[Tt]he\b", chapter_one)
 print("Количество the =", len(all_the))
