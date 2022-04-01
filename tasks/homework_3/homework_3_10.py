@@ -17,6 +17,10 @@ y1 = int(input('y1: '))
 x2 = int(input('x2: '))
 y2 = int(input('y2: '))
 
+#x1 = points[0]
+#y1 = points[1]
+#x2 = points[3]
+#y2 = points[4]
 def distance(x1, y1, x2, y2):
     c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
     return c
