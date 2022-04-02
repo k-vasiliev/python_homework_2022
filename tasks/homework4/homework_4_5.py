@@ -22,7 +22,7 @@ start = re.search(r'I.', text).end()
 end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
 text_1_part = text[start:end]
 
-list_of_the = re.findall(r'\.The\s|\sthe\s|The\s', text_1_part)
+list_of_the = re.findall(r'\.The\s|\sthe\s|[Tt]he\s', text_1_part)
 """
 Данное регулярное выражание учитывает комбинации: The в начале строки, когда перед ним не было точки, The в начале 
 предложения после точки, the в средине слова
