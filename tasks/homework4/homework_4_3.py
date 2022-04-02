@@ -17,7 +17,7 @@ def find_abbreviations(text: str) -> list:
     """
     Принимает текст и возвращает список из аббревиатур
     """
-    final_string = re.findall(r"[A-Я]{2,}\s[A-Я]{2,}|[A-Я]{2,}", text)
+    final_string = re.findall(r"(?:\s[А-Я]{2,})+", text)
     return final_string
 
 
