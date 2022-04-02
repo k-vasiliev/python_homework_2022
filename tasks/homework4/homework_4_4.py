@@ -10,7 +10,7 @@ def find_words_starts_with_ae(text: str) -> list:
     """
     Принимает текст и возвращает список из слов
     """
-    final_string = re.findall(r"(?<= )[a|e|A|E]\w+", text) #учитывает, если слово начинается и с регистра заглавныхх букв
+    final_string = re.findall(r"(?<= )[a|e|A|E]\w*", text) #учитывает, если слово начинается и с регистра заглавныхх букв
     return final_string
 
 
