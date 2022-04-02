@@ -4,7 +4,7 @@
 """
 
 
-def fibonacci(n: int):
+def fibonacci(n: int) -> list:
     fib = [1, 1]
     for _ in range(1, n-1):
         fib_n = int(fib[-2]) + int(fib[-1])
