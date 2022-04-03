@@ -5,14 +5,14 @@
 
 # Используйте типизацию! - Ок! ¯\_(ツ)_/¯
 
-def fibonacci(N):
+def fibonacci(N:int) -> list:
     #беру свое же решение
     my_list = [0]
     for i in range(N):
         if len(my_list) == 1:
-            my_list.append(int(i) + 1)
+            my_list.append(i + 1)
         else:
-            x = my_list[int(i) - 1] + my_list[int(i)]
+            x = my_list[i - 1] + my_list[i]
             my_list.append(x)
     return print(my_list[1:]) # возвращаем список из чисел
 
