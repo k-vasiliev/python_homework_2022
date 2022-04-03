@@ -22,3 +22,4 @@ end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).end() #ст
 list_of_the = re.findall(r'\b[Tt]he\b', text[start:end])
 
 print(len(list_of_the))
+

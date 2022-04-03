@@ -5,7 +5,7 @@
 
 # Используйте типизацию! - Ок! ¯\_(ツ)_/¯
 
-def fibonacci(N:int) -> list:
+def fibonacci(N: int) -> list:
     #беру свое же решение
     my_list = [0]
     for i in range(N):
