@@ -10,7 +10,7 @@ def find_words_starts_with_ae(text: str) -> list:
     """
     Принимает текст и возвращает список из слов
     """
-    return list(dict.fromkeys(re.findall(r"\b[aAeE]\w+", text)))
+    return list(dict.fromkeys(re.findall(r"\b[aAeE]\w*", text)))
 
 
 example_input = "The following example creates an ArrayList with a capacity of 50 elements.\

@@ -24,7 +24,7 @@ end = re.search(r'PART\sII\r\n\r', text).start()
 # берем текст первой главы
 chapter1 = text[start:end]
 # ищем вхождения
-result = re.findall(r'\b[Tt]he\s', chapter1)
+result = re.findall(r'\b[Tt]he\b', chapter1)
 # считаем число
 count = len(result)
 
