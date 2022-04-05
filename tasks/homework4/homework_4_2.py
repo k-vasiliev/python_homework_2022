@@ -14,9 +14,10 @@ def debug(func):
     def wrapper(*args):
         print(*args)    # печатает все аргументы функции, на которой была вызвана
         print(datetime.now())   # печатает время начала работы функции
-        func(*args)     # функция, которую нужно дебажить
+        function_for_debug = func(*args)     # функция, которую нужно дебажить
         print(datetime.now())   # печатает время окончания работы функции
         print(func(*args))  # печатает результат работы функции
+        return function_for_debug
     return wrapper
 
 

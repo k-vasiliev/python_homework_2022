@@ -10,7 +10,7 @@ def find_words_starts_with_ae(text: str) -> list:
     """
     Принимает текст и возвращает список из слов
     """
-    ae_words = re.findall('\\b[aA]\w{2,}|\\b[eE]\w{2,}', text)
+    ae_words = re.findall('\\b[aA]\w{1,}|\\b[eE]\w{1,}', text)
     return ae_words
 
 
