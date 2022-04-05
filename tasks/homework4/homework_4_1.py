@@ -15,12 +15,17 @@
 Ввод: 6
 Вывод: 1, 1, 2, 3, 5, 8
 """
-def fibonacci(N):
-    n1, n2 = [1, 1]
-    for i in range(N):
-        yield n1
-        n1, n2 = n2, n1 + n2
 
-input_num = list(fibonacci(6))
-print(input_num)
 
+def fibonacci(n: int) -> list:
+    if n == 1:
+        return [1]
+    elif n == 2:
+        return [1, 1]
+
+    fib_ser = fibonacci(n - 1)
+    fib_ser.append(fib_ser[-1] + fib_ser[-2])
+    return fib_ser
+
+
+print(fibonacci(6))
