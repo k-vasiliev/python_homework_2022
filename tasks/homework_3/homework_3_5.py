@@ -13,4 +13,24 @@
 
 """
 
-N = int(input())
+n = int(input())
+f1 = 1
+f2 = 1
+i = 2
+new_list = []
+if n >= 2:
+    while i < n:
+        summa = f1+f2
+        f1 = f2
+        f2 = summa
+        new_list.append(summa)
+        i += 1
+
+    new_list = ', '.join(map(str, new_list))
+    print(1, 1, new_list)
+else:
+    if n == 1:
+        print(f1)
+
+
+
