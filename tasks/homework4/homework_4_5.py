@@ -14,14 +14,8 @@ the_idiot_url = 'https://www.gutenberg.org/files/2638/2638-0.txt'
 response = urllib.request.urlopen(the_idiot_url)
 text = response.read().decode('utf-8')
 
-start = re.search(r'I.', text).end()
+start = re.search(r'\*\*\* START OF THIS PROJECT GUTENBERG EBOOK THE IDIOT \*\*\*', raw).end()
 # Индекс конца первой главы
-end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
+end = re.search(r'II', text).start()
 
-chapter_1 = text[start:end]
-the_list = re.findall(r'\b[Tt]he\b', chapter_1)
-count_the = len(the_list)
-
-print(count_the)
-
-
+# ваше решение
