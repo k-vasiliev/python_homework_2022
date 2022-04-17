@@ -19,6 +19,7 @@ def zip_images(archive_name: str = 'img_archive', path_name: str = 'C:\\Users\\7
     # поменяем рабочий каталог
     os.chdir(path_name)
 
+    #создадим архив и воткнем в него нужные файлы
     with zipfile.ZipFile(archive_name + '.zip', 'w') as new_zip:
         for file in os.listdir():
             if os.path.splitext(file)[1] in list_of_img_ext:
