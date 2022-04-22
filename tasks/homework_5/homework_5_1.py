@@ -9,10 +9,6 @@
 import shutil, glob
 
 def zip_images(source: str, destination: str):
-    """  pass
-
- source = "C:\\Users\julia\Documents\Питон_ВШЭ\img_source"
-  destination = "C:\\Users\julia\Documents\Питон_ВШЭ\img_destin" """
 
     for file in glob.glob(source+"\*.jpg"):
         shutil.copy2(file, destination);
@@ -20,7 +16,4 @@ def zip_images(source: str, destination: str):
     shutil.make_archive(destination, 'zip', destination)
     return print('ready')
 
-zip_images("C:\\Users\julia\Documents\Питон_ВШЭ\img_source", "C:\\Users\julia\Documents\Питон_ВШЭ\img_destin")
-"""
-
-"""
+zip_images("C:\\example_source", "C:\\example_destination")
