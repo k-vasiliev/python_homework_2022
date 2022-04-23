@@ -18,7 +18,7 @@ def bisearch(sorted_list: list[int], number_to_find) -> int:
     ml = l // 2
     m_start = 0
 
-    while len(sorted_list) > 1:
+    while len(sorted_list) != 1:
         #уходим в левую часть массива
         if number_to_find < sorted_list[ml]:
             sorted_list = sorted_list[:ml]
