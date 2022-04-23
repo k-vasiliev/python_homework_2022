@@ -14,8 +14,8 @@ with open('man_oscars.csv', 'w', encoding='utf-8') as man_oscars_csv:
     with open('oscar.html') as web_page:
         #распарсим все до строк
         parsed_page = bs(web_page.read(), features='html.parser')
-        table = parsed_page.find_all('table') #т.к. в файле одна таблица, то найдем эту одну таблицу
-        table_rows = table[0].find_all('tr')
+        tables = parsed_page.find_all('table') #т.к. в файле одна таблица, то найдем эту одну таблицу
+        table_rows = tables[0].find_all('tr')
         #пойдем парсить строки
         for row in table_rows:
             row_2_insert = '' #пустая текстовая строка
