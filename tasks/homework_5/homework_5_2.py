@@ -23,7 +23,7 @@ def find_mothers_age_diff(year1: int, year2: int, age_group: str):
     # создадим пустой словарь
     csv_data_dict = {}
 
-    # отправим все в словарь, на случай если нам понабится в дальнейшем трогать эти значения вне задачи
+    # отправим все в словарь, т.к. я не хочу решать через if - это скучно
     with open('births-by-mothers-age.csv', 'r', encoding='utf-8') as csvfile:
         csv_data = csv.DictReader(csvfile, delimiter=';')
         for row in csv_data:
@@ -34,16 +34,19 @@ def find_mothers_age_diff(year1: int, year2: int, age_group: str):
             else:
                 csv_data_dict.update({row['Period']: {row['Mothers_Age']: row['Count']}})
 
-        # вытаскиваем значения и проихводим расчеты
+        # вытаскиваем значения и производим расчеты
         year1_dict = csv_data_dict[str(year1)]
-        year1_value = year1_dict[age_group]
-        year1_total = year1_dict['Total']
+        year1_value = int(year1_dict[age_group])
+        year1_total = int(year1_dict['Total'])
 
         year2_dict = csv_data_dict[str(year2)]
-        year2_value = year2_dict[age_group]
-        year2_total = year2_dict['Total']
+        year2_value = int(year2_dict[age_group])
+        year2_total = int(year2_dict['Total'])
 
-    return print(f'Разница в группе {age_group} составляет {}%. В {year1} процентное соотношение было {}%, а в {year2} стало {}%')
+        year_1_result = round((year1_value/year1_total) * 100, 2)
+        year_2_result = round((year2_value/year2_total) * 100, 2)
+        difference = round(abs(year_2_result - year_1_result), 2)
+
+    return print(f'Разница в группе {age_group} составляет {difference}%. В {year1} процентное соотношение было {year_1_result}%, а в {year2} стало {year_2_result}%')
 
 find_mothers_age_diff(2005, 2006, '25–29')
-
