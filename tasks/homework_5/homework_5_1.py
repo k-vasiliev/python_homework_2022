@@ -13,7 +13,7 @@ import os
 import zipfile
 
 zip_images = zipfile.ZipFile('zip_images.zip', 'w', zipfile.ZIP_DEFLATED)
-suffix = ('.jpeg', '.png')
+suffix = ('.jpeg','.png')
 for folder, subfolders, files in os.walk('C://Users//q2364//Desktop//python_homework_2022//tasks//homework_5//data'):
     for file in files:
         if file.endswith(suffix):
