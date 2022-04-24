@@ -16,9 +16,32 @@
 
 
 def bisearch(sorted_list: list[int], number_to_find) -> int:
-    pass
+    search_index = 0
+    loop_counter = 0
+
+    while len(sorted_list) >= 1:
+        if len(sorted_list) > 1:
+            middle_index = (len(sorted_list) // 2 + len(sorted_list) % 2) - 1
+        else:
+            middle_index = 0
+        if sorted_list[middle_index] == number_to_find:
+            if loop_counter == 0:
+                search_index = middle_index
+            else:
+                search_index += middle_index + 1
+            return search_index
+        elif len(sorted_list) == 1:
+            return None
+        elif sorted_list[middle_index] > number_to_find:
+            sorted_list = sorted_list[:middle_index]
+        elif sorted_list[middle_index] < number_to_find:
+            sorted_list = sorted_list[middle_index + 1:]
+            if loop_counter == 0:
+                search_index = middle_index
+            else:
+                search_index += middle_index + 1
+            loop_counter += 1
 
 
-assert bisearch([1, 2, 3], 2) == 1
-assert bisearch([1, 2, 3], 5) is None
-# рекомендую дописать сюда еще проверок функций на пограничные ситуации
+print(bisearch([1, 1, 1, 1, 3, 4, 5, 6, 8, 9, 10, 10, 10], 1))
+

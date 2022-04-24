@@ -9,4 +9,21 @@
 
 
 def zip_images():
-    pass
+    import os
+    import zipfile
+
+    images_format = (".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".gif", ".wmf") # список всех изображений
+
+    file_path = 'data'
+    file_names = os.listdir(file_path)
+
+    z = zipfile.ZipFile('image_files.zip', 'w')        # Создание нового архива
+    for root, dirs, files in os.walk('data'):          # Список всех файлов и папок в директории data
+        for file in files:
+            if os.path.splitext(file)[1] in images_format:
+                z.write(os.path.join(root,file))
+    z.close()
+
+
+zip_images()
+
