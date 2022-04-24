@@ -10,7 +10,8 @@ def find_words_starts_with_ae(text: str) -> list:
     """
     Принимает текст и возвращает список из слов
     """
-    pass  # тут ваше решение
+    final_string = re.findall(r"(?<= )[a|e|A|E]\w+", text) #учитывает, если слово начинается и с регистра заглавныхх букв
+    return final_string
 
 
 example_input = "The following example creates an ArrayList with a capacity of 50 elements.\

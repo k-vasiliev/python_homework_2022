@@ -5,6 +5,9 @@
 
 Заметьте, что the может быть частью слова! Надо достать именно слово the
 """
+
+
+
 import re
 import urllib.request
 from utils import disable_ssl_check
@@ -17,5 +20,12 @@ text = response.read().decode('utf-8')
 start = re.search(r'I.', text).end()
 # Индекс конца первой главы
 end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
+text_1_part = text[start:end]
 
-# ваше решение
+list_of_the = re.findall(r'\.The\s|\sthe\s|The\s', text_1_part)
+"""
+Данное регулярное выражание учитывает комбинации: The в начале строки, когда перед ним не было точки, The в начале 
+предложения после точки, the в средине слова
+"""
+
+print('Количество the/The в тексте первой главы: {}'.format(len(list_of_the)))
