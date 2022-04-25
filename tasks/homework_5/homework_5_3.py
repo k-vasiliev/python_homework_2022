@@ -18,3 +18,4 @@ with open("man_oscarcs.csv", "wt+", newline="") as f:
         for cell in row.find_all(["td", "th"]):
             csv_row.append(cell.get_text())
         writer.writerow(csv_row)
+
