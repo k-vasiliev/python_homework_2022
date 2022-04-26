@@ -11,15 +11,24 @@
 Изменение на 0.11%
 """
 import csv
-import re
-with open('data/births-by-mothers-age.csv', 'r', encoding='utf8') as csv_file:
-    csv_reader = csv.DictReader(csv_file, delimiter = ";")
 
-    for row in csv_reader:
-        print(f' Period {row["Period"]} Mothers_Age {row["Mothers_Age"]}', end='')
-        print(f' Count {row["Count"]}')
+def find_mothers_age_diff(first_year: int, second_year: int, age_group: str):
+    with open(r'data\births-by-mothers-age.csv', 'r', encoding='utf8') as csv_file:
+        csv_reader = csv.DictReader(csv_file, delimiter = ";")
+        for row in csv_reader:
+            if row['Period'] == str(first_year) and row['Mothers_Age'] == 'Total':
+                total_first_year = int(row['Count'])
+            if row['Period'] == str(second_year) and row['Mothers_Age'] == 'Total':
+                total_second_year = int(row['Count'])
+            if row['Period'] == str(first_year) and row['Mothers_Age'] == age_group:
+                age_group_first_year = int(row['Count'])
+            if row['Period'] == str(second_year) and row['Mothers_Age'] == age_group:
+                age_group_second_year = int(row['Count'])
 
-    # Я не понимаю каким образом дальше вытаскивать данные, ничего не получилось.
+        first_year_value = round(age_group_first_year / total_first_year * 100, 2)
+        second_year_value = round(age_group_second_year / total_second_year * 100, 2)
+        delta = round(first_year_value - second_year_value, 2)
+        print(f'Разница в группе {age_group} составляет {delta}%. В {first_year} процентное соотношение было '
+              f'{first_year_value}%, а в {second_year} стало {second_year_value}%')
 
-#def find_mothers_age_diff(year1: int, year2: int, age_group: str):
-    #print(f'Разница в группе {age_group} составляет {}%. В {year1} процентное соотношение было {}%, а в {year2} стало {}%')
+find_mothers_age_diff(2006, 2005, '25–29')
