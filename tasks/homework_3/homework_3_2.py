@@ -4,9 +4,9 @@
 Цифры: 3
 Буквы: 5                        """
 user_input = input("Введите текст: ")
-string = "абвгд 234"
+#string = "абвгд 234"
 symbol = {'Цифры': 0 , 'Буквы': 0}
-for i in string:
+for i in user_input:
     if i.isdigit():
         symbol['Цифры'] += 1
     elif i.isalpha():

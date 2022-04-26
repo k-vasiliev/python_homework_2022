@@ -6,7 +6,7 @@
 import re
 
 
-def find_words_starts_with_ae(text: str) -> list:
+#def find_words_starts_with_ae(text: str) -> list:
     """
     Принимает текст и возвращает список из слов
     """
