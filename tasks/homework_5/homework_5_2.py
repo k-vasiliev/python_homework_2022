@@ -20,12 +20,12 @@ def find_mothers_age_diff(year1: int, year2: int, age_group: str):
             if row['Mothers_Age'] == age_group:
                 if int(row['Period']) == year1:
                     count_year1 = int(row['Count'])
-                elif int(row['Period']) == year2:
+                if int(row['Period']) == year2:
                     count_year2 = int(row['Count'])
             if row['Mothers_Age'] == 'Total':
                 if int(row['Period']) == year1:
                     total_year1 = int(row['Count'])
-                elif int(row['Period']) == year2:
+                if int(row['Period']) == year2:
                     total_year2 = int(row['Count'])
         perc1 = count_year1/total_year1*100
         perc2 = count_year2/total_year2*100

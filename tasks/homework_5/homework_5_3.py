@@ -12,9 +12,8 @@ with open('/Users/nikaborisova/PycharmProjects/python_homework_2022/tasks/homewo
 
     header = parser.findAll('tr')[0]
     header_list = []
-    for item in header:
-        if len(item.text.strip()) > 0:
-            header_list.append(item.text.strip())
+    for item in header.findAll('td'):
+        header_list.append(item.text.strip())
 
     row = parser.findAll('tr')[1:]
     row_year_list = []
