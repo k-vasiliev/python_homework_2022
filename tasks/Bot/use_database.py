@@ -22,5 +22,3 @@ def db_commit():
 def delete_user(user_id):
     db_cursor.execute(f'delete from users_data where user_id = {user_id}')
     db_connection.commit()
-    db_cursor.execute(f'delete from bot_questions where user_id = {user_id}')
-    db_connection.commit()
