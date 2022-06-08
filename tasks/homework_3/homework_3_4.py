@@ -24,3 +24,17 @@ shops = [
 ]
 
 # ваш код
+
+ans_shops = {}
+
+for i in shops:
+    temp_line = {i['товар']: i['количество']}
+    for key in temp_line:
+        if key not in ans_shops:
+            ans_shops.update(temp_line)
+        else:
+            ans_shops.update({key: (temp_line[key] + ans_shops[key])})
+print(ans_shops)
+
+for keys, value in ans_shops.items():
+    print(f'{keys} : {value}')

@@ -10,3 +10,14 @@
 """
 
 user_input = input()
+new_input = user_input.replace(" ", "")
+
+summa_digits = 0
+summa_chars = 0
+
+for i in new_input:
+    if i.isdigit():
+        summa_digits += 1
+    else:
+        summa_chars += 1
+print(f' Цифры: {summa_digits}\n Буквы: {summa_chars}')

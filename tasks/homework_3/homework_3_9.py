@@ -13,3 +13,16 @@
 """
 
 user_input = input()
+user_input_list = (user_input).split(' ')
+
+maXX = int(user_input_list[0])
+miNN = int(user_input_list[0])
+
+for i in user_input_list:
+    if int(i) > maXX:
+        maXX = int(i)
+    if int(i) < miNN:
+        miNN = int(i)
+
+
+print(f'Наибольшее число: {maXX}\nНаименьшее чесло: {miNN}')
