@@ -13,6 +13,14 @@ weather_token = bf.get_weather_token()
 #запустим бота
 bot = telebot.TeleBot(token)
 
+#зададим клавиатуру
+keyboard = types.ReplyKeyboardMarkup()
+my_city_button = types.InlineKeyboardButton('В моем городе')
+other_city_button = types.InlineKeyboardButton('Другой город')
+geo_button = types.InlineKeyboardButton('По геолокации')
+keyboard.row(my_city_button, other_city_button)
+keyboard.row(geo_button)
+
 #задаем действия на команды
 #команда старт
 @bot.message_handler(commands=['start'])
@@ -81,7 +89,7 @@ def ask_city(message):
         bot.register_next_step_handler(msg, ask_city)
     else:
         udb.db_update('users_data', 'home_city', '\'' + message.text + '\'', f'where user_id = {user_id}')
-        bot.send_message(message.chat.id, bt.final)
+        bot.send_message(message.chat.id, bt.final, reply_markup=keyboard)
 
 def ask_city_forecast(message):
     location_msg = message.text.replace(' ', '').split(',')
@@ -150,22 +158,16 @@ def get_message(message):
         user_home_geo = udb.db_select(f'select lat, lng from geo where country = \'{user_data[1]}\' and city = \'{user_data[2]}\'')
         location = bf.get_location_data(weather_token, user_home_geo[0], user_home_geo[1])
         forecast = bf.get_forecast(weather_token, location[0])
-        bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast)
+        bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast, reply_markup=keyboard)
     elif message.text.lower().strip() == 'другой город':
         msg = bot.send_message(message.chat.id, 'Пришли мне страну и город через запятую, например: Россия, Тверь')
         bot.register_next_step_handler(msg, ask_city_forecast)
     elif message.text.lower().strip() == 'по геолокации':
         bot.send_message(message.chat.id, 'Пришли мне свою гелокацию')
     else:
-        #сделаем кнопки для удобства
-        keyboard = types.ReplyKeyboardMarkup()
-        my_city_button = types.InlineKeyboardButton('В моем городе')
-        other_city_button = types.InlineKeyboardButton('Другой город')
-        geo_button = types.InlineKeyboardButton('По геолокации')
-        keyboard.row(my_city_button, other_city_button)
-        keyboard.row(geo_button)
         bot.send_message(message.chat.id, bt.use_keyboard, reply_markup=keyboard)
 
+#по гелокации
 @bot.message_handler(content_types=['location'])
 def handle_location(message):
     user_id = message.from_user.id  #вытащим ИД пользователя
@@ -174,6 +176,6 @@ def handle_location(message):
     lon = message.location.longitude
     location = bf.get_location_data(weather_token, lat, lon)
     forecast = bf.get_forecast(weather_token, location[0])
-    bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast)
+    bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast, reply_markup=keyboard)
 
 bot.polling(none_stop=True, interval=0)
