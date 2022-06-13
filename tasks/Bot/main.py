@@ -98,13 +98,16 @@ def ask_city_forecast(message):
         msg = bot.send_message(message.chat.id, 'Я не нашел такого города, попробуй еще раз')
         bot.register_next_step_handler(msg, ask_city_forecast)
     else:
-        user_id = message.from_user.id  # вытащим ИД пользователя
-        user_data = udb.db_select(f'select name, home_country, home_city from users_data where user_id = {user_id}')  # данные пользователя
-        lat = location_geo[0]
-        lon = location_geo[1]
-        location = bf.get_location_data(weather_token, lat, lon)
-        forecast = bf.get_forecast(weather_token, location[0])
-        bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast)
+        try:
+            user_id = message.from_user.id  # вытащим ИД пользователя
+            user_data = udb.db_select(f'select name, home_country, home_city from users_data where user_id = {user_id}')  # данные пользователя
+            lat = location_geo[0]
+            lon = location_geo[1]
+            location = bf.get_location_data(weather_token, lat, lon)
+            forecast = bf.get_forecast(weather_token, location[0])
+            bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast)
+        except KeyError:
+            bot.send_message(message.chat.id, emoji.emojize('Что-то пошло не так, попробуй позднее:disappointed_face:'))
 
 #настраиваем сбор коллбэков с кнопок
 @bot.callback_query_handler(func=lambda call: True)
@@ -161,15 +164,18 @@ def get_message(message):
             msg = bot.send_message(message.chat.id, bt.ask_home_city_break)
             bot.register_next_step_handler(msg, ask_city)
     elif message.text.lower().strip() == 'в моем городе':
-        user_home_geo = udb.db_select(f'select lat, lng from geo where country = \'{user_data[1]}\' and city = \'{user_data[2]}\'')
-        location = bf.get_location_data(weather_token, user_home_geo[0], user_home_geo[1])
-        forecast = bf.get_forecast(weather_token, location[0])
-        bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast, reply_markup=keyboard)
+        try:
+            user_home_geo = udb.db_select(f'select lat, lng from geo where country = \'{user_data[1]}\' and city = \'{user_data[2]}\'')
+            location = bf.get_location_data(weather_token, user_home_geo[0], user_home_geo[1])
+            forecast = bf.get_forecast(weather_token, location[0])
+            bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast, reply_markup=keyboard)
+        except KeyError:
+            bot.send_message(message.chat.id, emoji.emojize('Что-то пошло не так, попробуй позднее:disappointed_face:'))
     elif message.text.lower().strip() == 'другой город':
         msg = bot.send_message(message.chat.id, 'Пришли мне страну и город через запятую, например: Россия, Тверь')
         bot.register_next_step_handler(msg, ask_city_forecast)
     elif message.text.lower().strip() == 'по геолокации':
-        bot.send_message(message.chat.id, 'Пришли мне свою гелокацию')
+        bot.send_message(message.chat.id, 'Пришли мне гелокацию')
     else:
         bot.send_message(message.chat.id, bt.use_keyboard, reply_markup=keyboard)
 
@@ -180,8 +186,28 @@ def handle_location(message):
     user_data = udb.db_select(f'select name, home_country, home_city from users_data where user_id = {user_id}') #данные пользователя
     lat = message.location.latitude
     lon = message.location.longitude
-    location = bf.get_location_data(weather_token, lat, lon)
-    forecast = bf.get_forecast(weather_token, location[0])
-    bot.send_message(message.chat.id, f'{user_data[0]}, вот погода в {location[1]}, {location[2]}:\n\n' + forecast, reply_markup=keyboard)
+    if user_data is None:
+        msg = bot.send_message(message.chat.id, bt.ask_name_break)
+        bot.register_next_step_handler(msg, ask_name)
+    elif sum(x is not None for x in user_data) != 3:
+        if user_data[0] is None:
+            msg = bot.send_message(message.chat.id, bt.ask_name_break)
+            bot.register_next_step_handler(msg, ask_name)
+        elif user_data[1] is None:
+            msg = bot.send_message(message.chat.id, bt.ask_home_country_break)
+            bot.register_next_step_handler(msg, ask_country)
+        elif user_data[2] is None:
+            msg = bot.send_message(message.chat.id, bt.ask_home_city_break)
+            bot.register_next_step_handler(msg, ask_city)
+    else:
+        try:
+            location = bf.get_location_data(weather_token, lat, lon)
+            forecast = bf.get_forecast(weather_token, location[0])
+            bot.send_message(message.chat.id, f'{user_data[0]}, ниже прогноз! \n\n'
+                                              f'Страна: {location[1]}\n'
+                                              f'Регион: {location[3]}\n'
+                                              f'Населенный пункт: {location[2]}\n\n' + forecast, reply_markup=keyboard)
+        except KeyError:
+            bot.send_message(message.chat.id, emoji.emojize('Что-то пошло не так, попробуй позднее:disappointed_face:'))
 
 bot.polling(none_stop=True, interval=0)
