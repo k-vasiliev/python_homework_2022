@@ -11,11 +11,12 @@ def get_weather_token():
         return str(token_file.readlines()[1].strip())
 
 def get_location_data(token, lat, lon):
-    get_key = f'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey={token}&q={lat}%2C{lon}&language=ru-ru'
+    get_key = f'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey={token}&q={lat}%2C{lon}&language=ru-ru&details=false&toplevel=false'
     loc_key = json.loads(requests.get(get_key).text)['Key']
     loc_country = json.loads(requests.get(get_key).text)['Country']['LocalizedName']
-    loc_city = json.loads(requests.get(get_key).text)['AdministrativeArea']['LocalizedName']
-    return [loc_key, loc_country, loc_city]
+    loc_city_area = json.loads(requests.get(get_key).text)['AdministrativeArea']['LocalizedName']
+    loc_city = json.loads(requests.get(get_key).text)['LocalizedName']
+    return [loc_key, loc_country, loc_city, loc_city_area]
 
 def get_forecast(token, loc_key):
     get_weather = f'http://dataservice.accuweather.com/forecasts/v1/daily/5day/{loc_key}?apikey={token}&language=ru-ru&details=true&metric=true'

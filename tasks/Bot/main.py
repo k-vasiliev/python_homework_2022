@@ -27,7 +27,6 @@ keyboard.row(geo_button)
 def start(message, res=False):
     user_id = message.from_user.id
     if udb.db_select(f'select count(user_id) from users_data where user_id = {user_id}')[0] == 0:
-        udb.db_insert('users_data', 'user_id', user_id)
         start_keys = types.InlineKeyboardMarkup()
         let_key = types.InlineKeyboardButton("Давай!", callback_data='Давай#123qq')
         start_keys.add(let_key)
@@ -62,6 +61,7 @@ def ask_name(message):
         msg = bot.send_message(message.chat.id, emoji.emojize(bt.wrong_name))
         bot.register_next_step_handler(msg, ask_name)
     else:
+        udb.db_insert('users_data', 'user_id', user_id) #вставим нового пользователя
         udb.db_update('users_data', 'name', '\'' + message.text + '\'', f'where user_id = {user_id}')
         bot.send_message(message.chat.id, bt.greetings_msg(message.text), reply_markup=name_keys)
 
@@ -125,7 +125,10 @@ def handle(callback):
     if callback.data == 'Знакомы#123qq':
         # данные пользователя
         user_data = udb.db_select(f'select name, home_country, home_city from users_data where user_id = {user_id}')
-        if sum(x is not None for x in user_data) == 3:
+        if user_data is None:
+            msg = bot.send_message(callback.message.chat.id, bt.ask_name_break)
+            bot.register_next_step_handler(msg, ask_name)
+        elif sum(x is not None for x in user_data) == 3:
             bot.send_message(callback.message.chat.id, 'Прекрасно, рад твоему возвращению!')
         else:
             if user_data[0] is None:
@@ -144,7 +147,10 @@ def handle(callback):
 def get_message(message):
     user_id = message.from_user.id  #вытащим ИД пользователя
     user_data = udb.db_select(f'select name, home_country, home_city from users_data where user_id = {user_id}') #данные пользователя
-    if sum(x is not None for x in user_data) != 3:
+    if user_data is None:
+        msg = bot.send_message(message.chat.id, bt.ask_name_break)
+        bot.register_next_step_handler(msg, ask_name)
+    elif sum(x is not None for x in user_data) != 3:
         if user_data[0] is None:
             msg = bot.send_message(message.chat.id, bt.ask_name_break)
             bot.register_next_step_handler(msg, ask_name)

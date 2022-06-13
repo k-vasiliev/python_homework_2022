@@ -49,4 +49,4 @@ def find_mothers_age_diff(year1: int, year2: int, age_group: str):
 
     return print(f'Разница в группе {age_group} составляет {difference}%. В {year1} процентное соотношение было {year_1_result}%, а в {year2} стало {year_2_result}%')
 
-find_mothers_age_diff(2005, 2006, '25–29')
+find_mothers_age_diff(2005, 2010, '40–44')
