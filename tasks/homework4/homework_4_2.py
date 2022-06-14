@@ -8,11 +8,20 @@
 """
 
 
-def debug(func):
-    pass
+from datetime import datetime
 
+
+def debug(func):
+    def wrapper(*args):
+        print(*args)
+        print(datetime.now())
+        print(func(*args))
+        print(datetime.now())
+    return wrapper
 
 # к этой функции надо применить декоратор
+
+@debug
 def example_function(argument):
     return argument[::-1]
 
