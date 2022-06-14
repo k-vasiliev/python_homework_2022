@@ -8,4 +8,9 @@
 
 """
 
-number = int(input())
+user_input_number = int(input())
+
+number_list = str(user_input_number)
+number_uniq = set(number_list)
+
+print(f'{len(number_list)},{len(number_uniq)}')

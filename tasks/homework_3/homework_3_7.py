@@ -9,4 +9,12 @@
 
 """
 
-input_string = (input())
+user_input_string = input().split()
+list_of_input = list()
+
+for i in user_input_string:
+    list_of_input.append(i[0])
+
+list_of_input = ''.join(map(str, list_of_input))
+
+print(list_of_input)

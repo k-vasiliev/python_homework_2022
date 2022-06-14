@@ -13,4 +13,9 @@
 
 """
 
-N = int(input())
+User_input = int(input())
+first_two_fibonacci_numbers = [1, 1]
+for i in range(1, User_input-1):
+    fibonacci_number = int(first_two_fibonacci_numbers[-2]) + int(first_two_fibonacci_numbers[-1])
+    first_two_fibonacci_numbers.append(fibonacci_number)
+print(*first_two_fibonacci_numbers, sep = ', ')
