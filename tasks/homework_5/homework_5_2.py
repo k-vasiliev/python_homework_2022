@@ -10,7 +10,24 @@
 В 2006 процент женщин попадающих в эту группу - 14082/59193=23.78%
 Изменение на 0.11%
 """
-
+import csv
 
 def find_mothers_age_diff(year1: int, year2: int, age_group: str):
-    print(f'Разница в группе {age_group} составляет {}%. В {year1} процентное соотношение было {}%, а в {year2} стало {}%')
+    file_path = './data/births-by-mothers-age.csv'
+    with open(file_path, encoding='utf-8') as file:
+        reader = csv.DictReader(file, delimiter=';')
+        for row in reader:
+            if row['Period'] == str(year1) and row['Mothers_Age'] == age_group:
+                count1 = int(row['Count'])
+            if row['Period'] == str(year1) and row['Mothers_Age'] == 'Total':
+                total1 = int(row['Count'])
+                percent1 = round(count1 / total1 * 100, 2)
+            if row['Period'] == str(year2) and row['Mothers_Age'] == age_group:
+                count2 = int(row['Count'])
+            if row['Period'] == str(year2) and row['Mothers_Age'] == 'Total':
+                total2 = int(row['Count'])
+                percent2 = round(count2 / total2 * 100, 2)
+                diff_percent = round((percent2 - percent1),2)
+                print(f'Разница в группе {age_group} составляет {diff_percent}%. В {year1} процентное соотношение было {percent1}%, а в {year2} стало {percent2}%')
+
+find_mothers_age_diff(2015, 2016, '25–29')
