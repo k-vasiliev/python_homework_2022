@@ -1,7 +1,6 @@
 """
 В html странице data/oscar.html таблица с мужчинами, получившими оскар
 Распарсите ее значения и сохраните в csv файл с названием 'man_oscarcs.csv'
-
 """
 from bs4 import BeautifulSoup
 import csv
