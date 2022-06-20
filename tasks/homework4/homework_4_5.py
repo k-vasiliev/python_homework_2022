@@ -17,5 +17,12 @@ text = response.read().decode('utf-8')
 start = re.search(r'I.', text).end()
 # Индекс конца первой главы
 end = re.search(r'And Afanasy Ivanovitch heaved a deep sigh.', text).start()
+count =0
+print(text[start:end])
+for bukvi in text[start:end].split(' '):
+    #print(bukvi)
+    if re.findall(r'(\bthe\b(?i))', bukvi):
+        count = count+1
+print(count)
 
-# ваше решение
+
