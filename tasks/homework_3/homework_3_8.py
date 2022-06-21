@@ -9,3 +9,9 @@
 """
 
 number = int(input())
+
+number_list = str(number)
+number_uniq = set(number_list)
+
+print(f'{len(number_list)},{len(number_uniq)}')
+

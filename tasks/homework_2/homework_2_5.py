@@ -19,3 +19,16 @@ student = ('Иван Питонов', 2001, [8, 7, 7, 9, 6], True)
 
 # Если средняя оценка Ивана больше или равна 8, то он получает повышенную стипендию.
 # Выведите "Повышенная стипендия: есть/нет" в зависимости от его оценок
+
+print(f'Student: {student[0][5:]} {student[0][:4]}\nAge: {CURRENT_YEAR - student[1]}')
+
+print(f'Marks: {student[2][0]}, {student[2][1]}, {student[2][2]}, {student[2][3]}, {student[2][4]}')
+
+avg = sum(student[2])/len(student[2])
+
+print(f'Average mark: {avg}')
+
+if avg >= 8:
+    print('Повышенная стипендия: есть')
+else:
+    print('Повышенная стипендия: нет')

@@ -9,4 +9,14 @@
 
 """
 
-input_string = (input())
+input_string = input().split()
+input_list = list()
+
+for i in input_string:
+    input_list.append(i[0])
+
+
+input_list = ''.join(map(str, input_list))
+
+print(input_list)
+
