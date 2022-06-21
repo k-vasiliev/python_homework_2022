@@ -7,5 +7,11 @@
 Выход: 6,4
 
 """
+count = 0
+number = input()
+number = list(map(int, number))
+print(f"{len(number)},{len(set(number))}")
 
-number = int(input())
+
+
+
